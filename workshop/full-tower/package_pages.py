@@ -6,8 +6,8 @@ import shutil
 from pathlib import Path
 
 SOURCE = Path(__file__).resolve().parent / 'editor'
-FILES = ('index.html', 'app.js', 'browser-store.js', 'style.css',
-         'monster-names.ko.json', 'sample-project.json', 'LOCALIZATION.md')
+FILES = ('index.html', 'app.js', 'i18n.js', 'browser-store.js', 'style.css',
+         'monster-names.ko.json', 'monster-names.ko.sources.json', 'sample-project.json', 'LOCALIZATION.md')
 
 
 def package(output):
@@ -28,7 +28,7 @@ def package(output):
     page = page.replace('<html lang="en">', '<html lang="en" data-mode="file">')
     (output / 'index.html').write_text(page, encoding='utf-8')
     (output / '.nojekyll').write_text('', encoding='utf-8')
-    (output / 'README.md').write_text('# Midgard Ascent JSON editor\n\nStatic English editor with Korean monster names. '
+    (output / 'README.md').write_text('# Midgard Ascent JSON editor\n\nEnglish and Korean editor; select a language without losing staged edits. '
         'Open a project locally or load the example. Download edited JSON. Files stay in your browser; '
         'there is no upload endpoint, analytics or runtime dependency download.\n\n'
         'This website does not compile or install the game mod. Use the local workshop compiler for that step. '

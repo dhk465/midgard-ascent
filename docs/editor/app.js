@@ -1,9 +1,12 @@
 'use strict';
 const $ = id => document.getElementById(id);
+let locale = TowerI18n.locale(location.search), lastStatus = '', lastError = false, lastProject = '';
+const display = value => TowerI18n.text(value, locale);
+function project(message) { lastProject = message; $('project').textContent = display(message); }
 const fileMode = document.documentElement.dataset.mode === 'file' || new URLSearchParams(location.search).get('mode') === 'file' || !['127.0.0.1', 'localhost', '[::1]'].includes(location.hostname);
-let baseline, current, token, selected, monsters = [], names = {}, busy = false, store, fileName = 'tower-project.json', exportPending = false;
+let baseline, current, token, selected, monsters = [], names = {}, nameSources = {}, busy = false, store, fileName = 'tower-project.json', exportPending = false;
 const clone = value => JSON.parse(JSON.stringify(value));
-function status(message, error = false) { $('status').textContent = message; $('status').className = error ? 'error' : ''; }
+function status(message, error = false) { lastStatus = message; lastError = error; $('status').textContent = display(message); $('status').className = error ? 'error' : ''; }
 async function request(path, options = {}) {
   const response = await fetch(path, {cache: 'no-store', ...options});
   const body = await response.json();
@@ -38,19 +41,15 @@ function controls() {
   $('download').disabled = busy || !store || !!changes().length;
 }
 function node(tag, text, className) {
-  const el = document.createElement(tag); if (text !== undefined) el.textContent = text; if (className) el.className = className; return el;
+  const el = document.createElement(tag); if (text !== undefined) el.textContent = display(text); if (className) el.className = className; return el;
 }
 function number(value, min, max, onChange) {
   const input = node('input'); Object.assign(input, {type:'number', value, min, max, step:1});
   input.addEventListener('input', () => onChange(input.value === '' ? NaN : Number(input.value))); return input;
 }
-function monsterLabel(mob) {
-  const korean = names[String(mob.id)] || 'Korean name unavailable';
-  const english = mob.id === 1077 ? 'Poison Spore' : mob.label || mob.aegis_name || mob.aegis || 'Outside project catalog';
-  return `${korean} · ${english} · ID ${mob.id}`;
-}
+function monsterLabel(mob) { return TowerI18n.monsterLabel(mob, names, locale, nameSources); }
 function render() {
-  $('heading').textContent = `Floor ${current.floor}`;
+  $('heading').textContent = display(`Floor ${current.floor}`);
   $('wave-count').value = current.wave_count;
   $('waves').replaceChildren();
   current.waves.forEach((wave, wi) => {
@@ -71,7 +70,7 @@ function render() {
       row.append(node('span', `Group ${gi + 1}${hidden ? ' · retained' : ''}`, hidden ? 'hidden-label' : ''));
       const mobLabel = node('label', 'Monster');
       if (monsters.length) {
-        const select = node('select'); select.setAttribute('aria-label', `Wave ${wi + 1} group ${gi + 1} monster`);
+        const select = node('select'); select.setAttribute('aria-label', display(`Wave ${wi + 1} group ${gi + 1} monster`));
         const entries = monsters.slice();
         if (!entries.some(m => m.id === group.mob_id)) entries.unshift({id:group.mob_id});
         for (const mob of entries) {
@@ -84,7 +83,7 @@ function render() {
       const countLabel = node('label', 'Count');
       countLabel.append(number(group.count, 0, 8, value => {
         group.count = value; const n = wave.groups.slice(0, wave.group_count).reduce((sum, g) => sum + g.count, 0);
-        head.lastChild.textContent = `Active total ${n} / 8`; head.lastChild.className = n < 1 || n > 8 || !Number.isFinite(n) ? 'invalid' : ''; controls();
+        head.lastChild.textContent = display(`Active total ${n} / 8`); head.lastChild.className = n < 1 || n > 8 || !Number.isFinite(n) ? 'invalid' : ''; controls();
       }));
       row.append(mobLabel, countLabel); groups.append(row);
     });
@@ -104,14 +103,14 @@ function floorOptions(floors) {
   $('floor').replaceChildren();
   for (const floor of floors) { const option = node('option', `Floor ${floor.floor}`); option.value = floor.floor; $('floor').append(option); }
 }
-function discardFloor() { return !changes().length || confirm('Discard unstaged changes to this floor?'); }
-function replaceProject() { return !(changes().length || exportPending) || confirm('Replace the browser project and discard changes that have not been downloaded?'); }
+function discardFloor() { return !changes().length || confirm(display('Discard unstaged changes to this floor?')); }
+function replaceProject() { return !(changes().length || exportPending) || confirm(display('Replace the browser project and discard changes that have not been downloaded?')); }
 async function openText(text, name) {
   // Validate the entire new document before replacing the current browser project.
   const next = TowerBrowser.BrowserStore.fromText(text);
   store = next; fileName = name; exportPending = false; current = baseline = undefined;
   monsters = store.catalog(); const meta = store.metadata(); floorOptions(meta.floors);
-  $('project').textContent = `${fileName} · ${meta.floors.length} floors · browser copy`;
+  project(`${fileName} · ${meta.floors.length} floors · browser copy`);
   await load(meta.floors[0].floor);
 }
 $('floor').onchange = () => {
@@ -155,28 +154,58 @@ $('download').onclick = () => {
   if (!store || changes().length) return;
   try {
     const url = URL.createObjectURL(new Blob([store.serialize()], {type:'application/json;charset=utf-8'}));
-    const anchor = node('a'); anchor.href = url; anchor.download = fileName.replace(/\.json$/i, '') + '-edited.json';
+    const anchor = node('a'); anchor.href = url; anchor.download = TowerI18n.downloadName(fileName, locale);
     document.body.append(anchor); anchor.click(); anchor.remove(); setTimeout(() => URL.revokeObjectURL(url), 60000);
     exportPending = false;
     status('Download requested. Confirm that your browser saved the JSON. Your original file has not changed; no game files were written.');
   } catch (error) { status(`Download failed: ${error.message}`, true); }
 };
 window.addEventListener('beforeunload', event => { if (changes().length || exportPending) { event.preventDefault(); event.returnValue = ''; } });
+function translatePage() {
+  document.documentElement.lang = locale;
+  document.querySelector('nav').setAttribute('aria-label', locale === 'ko' ? '언어' : 'Language');
+  document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = display(el.dataset.i18n); });
+  $('lang-en').setAttribute('aria-current', locale === 'en' ? 'page' : 'false');
+  $('lang-ko').setAttribute('aria-current', locale === 'ko' ? 'page' : 'false');
+  $('mode-badge').textContent = display(fileMode ? 'Browser JSON editor' : 'Authoring JSON editor');
+  $('save').textContent = display(fileMode ? 'Stage floor changes' : 'Save changed fields');
+  $('mode-help').textContent = display(fileMode ? 'Staging updates only this browser copy. Download JSON to retain your work. Reopen a file to see external edits.' : 'Saving updates the authoring JSON. Game installation remains a separate step.');
+  $('mode-footer').textContent = display(fileMode ? 'No uploads, game writes, installation or automatic file overwrites. Downloads contain the complete authoring document.' : 'No automatic installation or restart. Previous JSON versions are retained beside the project in its .backups folder.');
+  if (lastProject) project(lastProject);
+  if (current) { floorOptions(fileMode ? store.metadata().floors : [...$('floor').options].map(o => ({floor:Number(o.value)}))); $('floor').value = selected; render(); }
+  status(lastStatus, lastError);
+}
+async function loadNames() {
+  if (locale !== 'ko') return '';
+  const result = await Promise.allSettled([request('./monster-names.ko.json'), request('./monster-names.ko.sources.json')]);
+  let warning = '';
+  if (result[0].status === 'fulfilled') names = result[0].value;
+  else warning += ' Korean names could not be loaded; English names and IDs remain available.';
+  if (result[1].status === 'fulfilled') nameSources = result[1].value;
+  else { nameSources = {}; warning += ' Korean name provenance could not be loaded; names are marked unverified.'; }
+  return warning;
+}
+// Switch in place: current edits, browser project and pending download are retained.
+for (const lang of ['en', 'ko']) $('lang-' + lang).onclick = async event => {
+  event.preventDefault(); if (busy) return;
+  busy = true; controls(); locale = lang;
+  const url = new URL(location.href); url.searchParams.set('lang', lang); history.replaceState(null, '', url);
+  const warning = await loadNames(); translatePage(); if (warning) status(lastStatus + warning);
+  busy = false; controls();
+};
 (async () => {
-  let nameWarning = '';
-  try { names = await request('./monster-names.ko.json'); } catch (_) { nameWarning = ' Korean names could not be loaded; English names and IDs remain available.'; }
+  translatePage();
+  const nameWarning = await loadNames();
   if (fileMode) {
-    $('file-tools').hidden = false; $('mode-badge').textContent = 'Browser JSON editor'; $('save').textContent = 'Stage floor changes';
-    $('mode-help').textContent = 'Staging updates only this browser copy. Download JSON to retain your work. Reopen a file to see external edits.';
-    $('mode-footer').textContent = 'No uploads, game writes, installation or automatic file overwrites. Downloads contain the complete authoring document.';
-    $('project').textContent = 'Open a project JSON or load the example.';
+    $('file-tools').hidden = false;
+    project('Open a project JSON or load the example.');
     status('Ready. Choose Open project JSON or Load example.' + nameWarning); controls(); return;
   }
   try {
     const meta = await request('/api/floors'); token = meta.token;
-    $('project').textContent = `${meta.project} · ${meta.floors.length} floors`;
+    project(`${meta.project} · ${meta.floors.length} floors`);
     const catalog = await request('/api/catalog'); monsters = catalog.monsters || [];
     floorOptions(meta.floors); await load(meta.floors[0].floor);
-    if (nameWarning) status($('status').textContent + nameWarning);
+    if (nameWarning) status(lastStatus + nameWarning);
   } catch (error) { status(error.message, true); }
 })();

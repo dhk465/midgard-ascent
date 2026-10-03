@@ -1,11 +1,11 @@
-# Display language and monster identities
+# 표시 이름 출처와 몬스터 식별
 
-The interface uses English. Monster choices show Korean name, English name and numeric ID. Names are presentation only; project monster IDs, counts and combat data are unchanged.
+한국어 표시 이름은 [라그나로크 인벤 몬스터 DB](https://ro.inven.co.kr/dataninfo/monster/list.php)를 기준으로 확인했습니다. 현재55종 중42종은 Inven 상세 페이지의 `code`가 프로젝트 몬스터 ID와 일치하고 해당 페이지 제목의 한국어 이름을 확인했습니다. Inven에서 Aegis 문자열은 제공하지 않으므로 프로젝트의 ID↔Aegis 대응을 유지하고 숫자 ID로 연결했습니다. 이름이 비슷하다는 이유로 다른 몬스터로 치환하지 않았습니다.
 
-`monster-names.ko.json` covers all 55 monsters in the current authored tower catalog. Names were matched by Aegis identity against the existing local Korean navigation table `navi_mob_krpri.lub`, from the 2026-02-04 compatibility reference. This is not a claim of current live kRO patch parity. The table itself, sprites and other client assets are not included in the website.
+`monster-names.ko.sources.json`은 ID별 한국어 이름, 영어/Aegis 식별, Inven 링크, 확인 상태와 근거를 기록합니다. 확인일2026-10-03. 이름 메타데이터만 사용하며 이미지, 게시글, 원본 페이지는 공개 패키지에 포함하지 않습니다. Inven DB의 현재 게임 패치 정확성이나 전투 수치 일치를 보증하지 않습니다.
 
-The names were extracted locally during development; the private extraction log and original navigation table are not distributed. Table rows pair the Korean display name with the Aegis identity; catalog IDs provide the stable join key. An unknown ID keeps its English label and an explicit missing-Korean-name message.
+13종은 정확한 ID 상세 주소에서 존재하지 않는 몬스터라는 응답을 받았습니다. 이 항목들은 이전 로컬 한국어 내비게이션 표 `navi_mob_krpri.lub`의 Aegis 대응 이름(2026-02-04 호환 참고)을 임시로 유지하며, Inven 확인 이름으로 표시하지 않습니다. 미해결 목록:2398,2404,2405,3028,3495,3496,3497,3498,3499,3500,3501,3742,3743. 출처 상태는 `unresolved_inven_retained_navigation_fallback`입니다. 원본 내비게이션 표와 비공개 추출 로그는 포함하지 않습니다.
 
-Examples: 1002 포링 / Poring; 2398 풋내기 포링 / Little Poring; 2404 디노피시스 / Dead Plankton; 2405 그리슬 / Weak Skeleton. Picky IDs1049 and1050 share the Korean display name 픽키; the English label and numeric ID disambiguate them.
+Inven 표기 반영:1012 로다프로그,1047 페코페코알,1050 픽키(알),1094 앰버나이트. 특히1049 픽키와1050 픽키(알)는 상세 페이지 숫자 ID로 구분했습니다.1047은 이미지가 없는 항목이므로 목록의1047 링크와 상세 제목/댓글 식별1047을 함께 확인했습니다.
 
-Official corroboration for 풋내기 포링: https://ro.gnjoy.com/guide/runemidgarts/popup/monsterview.asp?monsterID=LITTLE_PORING
+표시 이름 변경은 프로젝트 몬스터 ID, 수량, 전투 설정을 변경하지 않습니다. UI 언어 번역은 별도 작업입니다. 영어 이름은 한국어 대신 사용하도록 추가하지 않고 진단용 출처 메타데이터로만 유지합니다.

@@ -2,11 +2,11 @@
 
 A configurable wave tower for Ragnarok Offline Renewal, with a browser JSON editor.
 
-The current source contains **20 authored floors, 62 normal waves and two optional trials**. The progression structure supports up to 200 logical floors; floors 21–200 are not authored. The editor uses English controls and Korean, English and numeric monster identities.
+The current source contains **20 authored floors, 62 normal waves and two optional trials**. The progression structure supports up to 200 logical floors; floors 21–200 are not authored. The editor has separate English and Korean views. The English view uses English monster names and IDs; the Korean view uses Inven-based names with documented source coverage.
 
 This repository contains source, configuration recipes and the editor. Build the playable candidate locally using your own game GRFs. Game maps, models, textures, sprites, music and prebuilt game archives are not distributed here.
 
-- [Browser editor](https://dhk465.github.io/midgard-ascent/editor/): open or load a project, edit waves, then download JSON. It does not compile or install a mod.
+- [English editor](https://dhk465.github.io/midgard-ascent/editor/) / [Korean editor](https://dhk465.github.io/midgard-ascent/editor/?lang=ko): open or load a project, edit waves, then download JSON. It does not compile or install a mod.
 - [Local build instructions](docs/BUILD.md).
 - [Compatibility and verification](docs/COMPATIBILITY.md).
 - [Registry publication status](docs/REGISTRY.md).

@@ -4,7 +4,7 @@ The tower compiler, editor and content recipes were developed for this project. 
 
 Ragnarok game names and client assets belong to their respective rights holders, including Gravity. The native map importer reads the user's local GRFs; resulting maps, models and textures remain local build outputs. Do not publish those outputs or their ZIP archives from this repository. The original navigation table, client sprites and recordings are not included.
 
-Monster display names and numeric identities are metadata used to select game monsters. Korean display-name provenance is documented in [LOCALIZATION.md](workshop/full-tower/editor/LOCALIZATION.md). No claim of exact current kRO patch parity is made.
+Monster display names and numeric identities are metadata used to select game monsters. Korean names are checked against [Inven Monster DB](https://ro.inven.co.kr/dataninfo/monster/list.php); per-monster evidence and unresolved entries are documented alongside the mapping. Display-name provenance is documented in [LOCALIZATION.md](workshop/full-tower/editor/LOCALIZATION.md). No claim of exact current kRO patch parity is made.
 
 Format and documentation references:
 

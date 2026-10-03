@@ -2,3 +2,5 @@
 
 #file-tools{margin-bottom:20px}#file-tools button{display:block;width:100%;margin-bottom:10px}[hidden]{display:none!important}
 
+
+header nav{display:flex;gap:12px;margin-left:16px}nav a{color:#8bd1bd}nav a[aria-current="page"]{font-weight:700;text-decoration:none}
