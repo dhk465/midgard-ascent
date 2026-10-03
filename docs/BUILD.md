@@ -1,6 +1,6 @@
 # Local build
 
-Run commands from the repository root. Python 3.10 or newer is required; the compiler uses the standard library. Node.js is only needed for browser-store tests and legacy settings import. No package installation is part of this process. Use Ragnarok Offline 1.4.3 for this build pipeline: its intermediate settings-bank builder requires app 1.3.4 or newer, and 1.4.3 is the supported inspected site profile. This is build/loader compatibility, not an in-game certification.
+Run commands from the repository root. Python 3.10 or newer is required; the compiler uses the standard library. Node.js is only needed for editor tests. No package installation is part of this process. Use Ragnarok Offline 1.4.3 for this build pipeline: its intermediate compiler stage requires app 1.3.4 or newer, and 1.4.3 is the supported inspected site profile. This is build/loader compatibility, not an in-game certification.
 
 1. Copy `workshop/chapter-one/config/site.example.json` to ignored `local/site.json`. Set your actual app version, Renewal era, NPC encoding, gate and return coordinates, and evidence note. Keep confirmations truthful; the example is deliberately incomplete.
 2. Supply paths to your own local GRFs. The native importer reads them and writes only under ignored `build/`. Optional BGM input requires both a local baseline table and music directory; no music is downloaded.
@@ -28,11 +28,9 @@ Open the localhost URL printed by the server. Stop it with Ctrl+C. Browser downl
 python -X utf8 workshop/full-tower/json_project.py build --project local/tower-project.json --source build/full/midgard-ascent --site local/site.json --output build/json/midgard-ascent
 ```
 
-The final folder and ZIP contain your GRF-derived assets. Keep them private. Intermediate settings-bank mods are build inputs; the JSON-compiled result is the intended single-mod candidate. Installation and Apply require a separately prepared isolated game test, not a build command.
+The final folder and ZIP contain your GRF-derived assets. Keep them private. Intermediate build folders are compiler inputs; the JSON-compiled result is the single-mod candidate. Installation and Apply require a separately prepared isolated game test, not a build command.
 
 For a later edit, compile into another fresh output, such as `build/revision-2/midgard-ascent`. Preserve existing projects and candidates until you have verified the new one.
-
-Legacy settings import uses `workshop/full-tower/import-settings.js`; it reads exported settings files, not live app state. Inspect its usage before migrating an existing configuration. Retired-monster migration requires explicit review.
 
 ## Local checks
 

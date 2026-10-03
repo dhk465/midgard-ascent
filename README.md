@@ -12,6 +12,4 @@ This repository contains source, configuration recipes and the editor. Build the
 - [Registry publication status](docs/REGISTRY.md).
 - [Sources and asset provenance](NOTICE.md).
 
-The project preserves existing tower map and character progress identifiers. Disable old `ohk` tower variants and settings companions before using a locally built Midgard Ascent candidate in an isolated test environment. They share identifiers and cannot be coactivated.
-
 Local automated checks cover the compiler and editor. In-game behavior, native server parsing, camera appearance and balance are still unverified. Building creates files only; installation and Apply are separate actions.
