@@ -1,0 +1,1746 @@
+{
+  "schema_version": 1,
+  "client_profile": {
+    "packetver": "20250402",
+    "era": "renewal",
+    "historical_20221005_verified": false,
+    "scope": "Local current client asset presence; native game NOT_RUN",
+    "protocol_date_is_content_cutoff": false
+  },
+  "level_scope": [
+    1,
+    18
+  ],
+  "level_scope_record_count": 195,
+  "monsters": [
+    {
+      "id": 1001,
+      "label": "Scorpion",
+      "level": 16,
+      "hp": 136,
+      "aegis_name": "SCORPION",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/morocc.txt",
+        "line": 104,
+        "map": "moc_fild11",
+        "sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c"
+      }
+    },
+    {
+      "id": 1002,
+      "label": "Poring",
+      "level": 1,
+      "hp": 55,
+      "aegis_name": "PORING",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 16,
+        "map": "prt_fild08",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1004,
+      "label": "Hornet",
+      "level": 11,
+      "hp": 85,
+      "aegis_name": "HORNET",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/mjolnir.txt",
+        "line": 183,
+        "map": "mjolnir_09",
+        "sha256": "3606ed6738d10b527beb3d41d2295d7cdf43a23a60a87638bef33effa84f2417"
+      }
+    },
+    {
+      "id": 1007,
+      "label": "Fabre",
+      "level": 6,
+      "hp": 59,
+      "aegis_name": "FABRE",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 18,
+        "map": "prt_fild08",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1008,
+      "label": "Pupa",
+      "level": 4,
+      "hp": 51,
+      "aegis_name": "PUPA",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/prt_maze.txt",
+        "line": 34,
+        "map": "prt_maze01",
+        "sha256": "3777701c4f9cb8f2e483fe999211686ab4cc660fc3942cfc93e62a124816facd"
+      }
+    },
+    {
+      "id": 1009,
+      "label": "Condor",
+      "level": 12,
+      "hp": 105,
+      "aegis_name": "CONDOR",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/morocc.txt",
+        "line": 103,
+        "map": "moc_fild11",
+        "sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c"
+      }
+    },
+    {
+      "id": 1010,
+      "label": "Willow",
+      "level": 8,
+      "hp": 78,
+      "aegis_name": "WILOW",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/mjolnir.txt",
+        "line": 182,
+        "map": "mjolnir_09",
+        "sha256": "3606ed6738d10b527beb3d41d2295d7cdf43a23a60a87638bef33effa84f2417"
+      }
+    },
+    {
+      "id": 1011,
+      "label": "Chonchon",
+      "level": 5,
+      "hp": 48,
+      "aegis_name": "CHONCHON",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/prt_maze.txt",
+        "line": 26,
+        "map": "prt_maze01",
+        "sha256": "3777701c4f9cb8f2e483fe999211686ab4cc660fc3942cfc93e62a124816facd"
+      }
+    },
+    {
+      "id": 1012,
+      "label": "Roda Frog",
+      "level": 13,
+      "hp": 140,
+      "aegis_name": "RODA_FROG",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 53,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1014,
+      "label": "Spore",
+      "level": 18,
+      "hp": 223,
+      "aegis_name": "SPORE",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 55,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1015,
+      "label": "Zombie",
+      "level": 17,
+      "hp": 204,
+      "aegis_name": "ZOMBIE",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 50,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1020,
+      "label": "Mandragora",
+      "level": 13,
+      "hp": 140,
+      "aegis_name": "MANDRAGORA",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/pay_dun.txt",
+        "line": 61,
+        "map": "pay_dun02",
+        "sha256": "5c6b13fb74b1c2ff2b3e4071d261a7ac95ad74a6ba622a471d9306a05210ccea"
+      }
+    },
+    {
+      "id": 1024,
+      "label": "Wormtail",
+      "level": 17,
+      "hp": 186,
+      "aegis_name": "WORM_TAIL",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/payon.txt",
+        "line": 30,
+        "map": "pay_fild02",
+        "sha256": "88f1d0a2c76de75c98790a34d01cde14d5e3a044d4b5338cc3865240d33677fc"
+      }
+    },
+    {
+      "id": 1025,
+      "label": "Boa",
+      "level": 18,
+      "hp": 203,
+      "aegis_name": "SNAKE",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/prt_maze.txt",
+        "line": 29,
+        "map": "prt_maze01",
+        "sha256": "3777701c4f9cb8f2e483fe999211686ab4cc660fc3942cfc93e62a124816facd"
+      }
+    },
+    {
+      "id": 1047,
+      "label": "Peco Peco Egg",
+      "level": 7,
+      "hp": 70,
+      "aegis_name": "PECOPECO_EGG",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/morocc.txt",
+        "line": 27,
+        "map": "moc_fild01",
+        "sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c"
+      }
+    },
+    {
+      "id": 1049,
+      "label": "Picky",
+      "level": 9,
+      "hp": 70,
+      "aegis_name": "PICKY",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/morocc.txt",
+        "line": 84,
+        "map": "moc_fild07",
+        "sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c"
+      }
+    },
+    {
+      "id": 1050,
+      "label": "Picky (Shell)",
+      "level": 10,
+      "hp": 77,
+      "aegis_name": "PICKY_",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/morocc.txt",
+        "line": 82,
+        "map": "moc_fild07",
+        "sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c"
+      }
+    },
+    {
+      "id": 1052,
+      "label": "Rocker",
+      "level": 15,
+      "hp": 155,
+      "aegis_name": "ROCKER",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/prt_maze.txt",
+        "line": 36,
+        "map": "prt_maze01",
+        "sha256": "3777701c4f9cb8f2e483fe999211686ab4cc660fc3942cfc93e62a124816facd"
+      }
+    },
+    {
+      "id": 1063,
+      "label": "Lunatic",
+      "level": 3,
+      "hp": 48,
+      "aegis_name": "LUNATIC",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 17,
+        "map": "prt_fild08",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1078,
+      "label": "Red Plant",
+      "level": 1,
+      "hp": 5,
+      "aegis_name": "RED_PLANT",
+      "base_spawn": {
+        "script": "rathena/npc/re/custom/lasagna/lasa_fild.txt",
+        "line": 17,
+        "map": "lasa_fild01",
+        "sha256": "6bdb5408ce1789f7215df20d5850ffae98eb056f2b3b42c113f055663c013790"
+      }
+    },
+    {
+      "id": 1079,
+      "label": "Blue Plant",
+      "level": 1,
+      "hp": 10,
+      "aegis_name": "BLUE_PLANT",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 48,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1080,
+      "label": "Green Plant",
+      "level": 1,
+      "hp": 5,
+      "aegis_name": "GREEN_PLANT",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 46,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1081,
+      "label": "Yellow Plant",
+      "level": 1,
+      "hp": 6,
+      "aegis_name": "YELLOW_PLANT",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 47,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1082,
+      "label": "White Plant",
+      "level": 1,
+      "hp": 7,
+      "aegis_name": "WHITE_PLANT",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 49,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1083,
+      "label": "Shining Plant",
+      "level": 1,
+      "hp": 20,
+      "aegis_name": "SHINING_PLANT",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/bra_dun.txt",
+        "line": 27,
+        "map": "bra_dun02",
+        "sha256": "64ffc8bdbf9f2a25e4c2a1c2cd772610bd0a8ca52c1fe31ccc4a5e09fd2affd9"
+      }
+    },
+    {
+      "id": 1084,
+      "label": "Black Mushroom",
+      "level": 1,
+      "hp": 5,
+      "aegis_name": "BLACK_MUSHROOM",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 41,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1085,
+      "label": "Red Mushroom",
+      "level": 1,
+      "hp": 5,
+      "aegis_name": "RED_MUSHROOM",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 40,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 1088,
+      "label": "Vocal",
+      "level": 18,
+      "hp": 3317,
+      "aegis_name": "VOCAL",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/prt_maze.txt",
+        "line": 87,
+        "map": "prt_maze03",
+        "sha256": "3777701c4f9cb8f2e483fe999211686ab4cc660fc3942cfc93e62a124816facd"
+      }
+    },
+    {
+      "id": 1107,
+      "label": "Baby Desert Wolf",
+      "level": 14,
+      "hp": 113,
+      "aegis_name": "DESERT_WOLF_B",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/morocc.txt",
+        "line": 102,
+        "map": "moc_fild11",
+        "sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c"
+      }
+    },
+    {
+      "id": 1113,
+      "label": "Drops",
+      "level": 2,
+      "hp": 46,
+      "aegis_name": "DROPS",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/xmas_dun.txt",
+        "line": 24,
+        "map": "xmas_dun01",
+        "sha256": "273e8dd65a697dce77d9d2aad89b4f26efe5eb3ca1de65eb0bed439ce5f1159a"
+      }
+    },
+    {
+      "id": 1167,
+      "label": "Savage Babe",
+      "level": 14,
+      "hp": 127,
+      "aegis_name": "SAVAGE_BABE",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/fields/mjolnir.txt",
+        "line": 181,
+        "map": "mjolnir_09",
+        "sha256": "3606ed6738d10b527beb3d41d2295d7cdf43a23a60a87638bef33effa84f2417"
+      }
+    },
+    {
+      "id": 2398,
+      "label": "Little Poring",
+      "level": 1,
+      "hp": 40,
+      "aegis_name": "LITTLE_PORING",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 19,
+        "map": "prt_fild08",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 2404,
+      "label": "Dead Plankton",
+      "level": 9,
+      "hp": 95,
+      "aegis_name": "DEAD_PLANKTON",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 44,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 2405,
+      "label": "Weak Skeleton",
+      "level": 18,
+      "hp": 223,
+      "aegis_name": "WEAK_SKELETON",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/academy.txt",
+        "line": 52,
+        "map": "treasure_n1",
+        "sha256": "21d8445bdc9abfdd629ab50957ffe3ca556bb37d802e365643d8a739dbcde5b8"
+      }
+    },
+    {
+      "id": 3028,
+      "label": "Sonia",
+      "level": 17,
+      "hp": 20,
+      "aegis_name": "SONIA",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/moro_vol.txt",
+        "line": 11,
+        "map": "moro_vol",
+        "sha256": "05f52272907f8a794964d0918ca8c6b3988f58c46e6b808030d346ffbf54f3dc"
+      }
+    },
+    {
+      "id": 3495,
+      "label": "Eggring",
+      "level": 1,
+      "hp": 50,
+      "aegis_name": "DR_EGGRING",
+      "base_spawn": {
+        "script": "rathena/npc/re/custom/lasagna/lasa_fild.txt",
+        "line": 11,
+        "map": "lasa_fild01",
+        "sha256": "6bdb5408ce1789f7215df20d5850ffae98eb056f2b3b42c113f055663c013790"
+      }
+    },
+    {
+      "id": 3496,
+      "label": "Leaf Lunatic",
+      "level": 3,
+      "hp": 44,
+      "aegis_name": "DR_LUNATIC",
+      "base_spawn": {
+        "script": "rathena/npc/re/custom/lasagna/lasa_fild.txt",
+        "line": 12,
+        "map": "lasa_fild01",
+        "sha256": "6bdb5408ce1789f7215df20d5850ffae98eb056f2b3b42c113f055663c013790"
+      }
+    },
+    {
+      "id": 3497,
+      "label": "Grass Fabre",
+      "level": 7,
+      "hp": 60,
+      "aegis_name": "DR_FABRE",
+      "base_spawn": {
+        "script": "rathena/npc/re/custom/lasagna/lasa_fild.txt",
+        "line": 13,
+        "map": "lasa_fild01",
+        "sha256": "6bdb5408ce1789f7215df20d5850ffae98eb056f2b3b42c113f055663c013790"
+      }
+    },
+    {
+      "id": 3498,
+      "label": "Wild Hornet",
+      "level": 11,
+      "hp": 78,
+      "aegis_name": "DR_HORNET",
+      "base_spawn": {
+        "script": "rathena/npc/re/custom/lasagna/lasa_fild.txt",
+        "line": 22,
+        "map": "lasa_fild02",
+        "sha256": "6bdb5408ce1789f7215df20d5850ffae98eb056f2b3b42c113f055663c013790"
+      }
+    },
+    {
+      "id": 3499,
+      "label": "Sweet Roda Frog",
+      "level": 14,
+      "hp": 140,
+      "aegis_name": "DR_RODA_FROG",
+      "base_spawn": {
+        "script": "rathena/npc/re/custom/lasagna/lasa_fild.txt",
+        "line": 23,
+        "map": "lasa_fild02",
+        "sha256": "6bdb5408ce1789f7215df20d5850ffae98eb056f2b3b42c113f055663c013790"
+      }
+    },
+    {
+      "id": 3500,
+      "label": "Hunter Desert Wolf",
+      "level": 17,
+      "hp": 113,
+      "aegis_name": "DR_DESERT_WOLF_B",
+      "base_spawn": {
+        "script": "rathena/npc/re/custom/lasagna/lasa_fild.txt",
+        "line": 24,
+        "map": "lasa_fild02",
+        "sha256": "6bdb5408ce1789f7215df20d5850ffae98eb056f2b3b42c113f055663c013790"
+      }
+    },
+    {
+      "id": 3501,
+      "label": "Trans Spore",
+      "level": 18,
+      "hp": 203,
+      "aegis_name": "DR_SPORE",
+      "base_spawn": {
+        "script": "rathena/npc/re/custom/lasagna/lasa_dun.txt",
+        "line": 11,
+        "map": "lasa_dun01",
+        "sha256": "3729470f7089686492d575dec1b89d6c90719c1c7d4b2a7c9f37ba111d2c1553"
+      }
+    },
+    {
+      "id": 3742,
+      "label": "Purple Ore",
+      "level": 1,
+      "hp": 20,
+      "aegis_name": "PURPLESTONE",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/rockridge.txt",
+        "line": 21,
+        "map": "rockmi2",
+        "sha256": "634dee51c7af3c142568840fea06be40bc462b2d573d90bf538d2fe309c2dd82"
+      }
+    },
+    {
+      "id": 3743,
+      "label": "Sea Anemone",
+      "level": 1,
+      "hp": 20,
+      "aegis_name": "SEAANEMONE",
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/rockridge.txt",
+        "line": 29,
+        "map": "harboro2",
+        "sha256": "634dee51c7af3c142568840fea06be40bc462b2d573d90bf538d2fe309c2dd82"
+      }
+    },
+    {
+      "id": 1077,
+      "aegis_name": "POISON_SPORE",
+      "label": "Poison Spore",
+      "label_ko": "포이즌 스포아",
+      "level": 26,
+      "hp": 379,
+      "direct_skills_reviewed": [
+        "NPC_POISON",
+        "NPC_POISONATTACK",
+        "NPC_EMOTION"
+      ],
+      "base_spawn": {
+        "script": "rathena/npc/re/mobs/dungeons/gef_dun.txt",
+        "line": 21,
+        "map": "gef_dun00",
+        "sha256": "b420cb70fb7e38be788e697e4845f83c4447b1cfe0a194a8232a6cc337d6a05d",
+        "source_url": "https://raw.githubusercontent.com/rathena/rathena/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/dungeons/gef_dun.txt"
+      },
+      "asset_sha256": {
+        "spr": "de2523546d94c2ccfd5dcd7a27ce52548a6619444ad46b5ac06908e5c4d09c1e",
+        "act": "42fb77abbd81f0ebd63f16b959b0cbb9da482907433f4173e710ec1a716dde6e"
+      },
+      "db_source": "pinned mob_db.yml:3699",
+      "skill_source": "image-files/rathena/db/re/mob_skill_db.txt:378-384",
+      "native_transform_or_summon": false,
+      "runtime_verified": false
+    }
+  ],
+  "excluded": [
+    {
+      "id": 1062,
+      "label": "Santa Poring",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 1182,
+      "label": "Thief Mushroom",
+      "reason": "Exported DB Class Event; event/special variant excluded even if statically spawned",
+      "category": "non_base"
+    },
+    {
+      "id": 1183,
+      "label": "Chonchon",
+      "reason": "Job-test/training clone; bundled spawns are job/custom test contexts, unlike regular base1007/1011",
+      "category": "non_base"
+    },
+    {
+      "id": 1184,
+      "label": "Fabre",
+      "reason": "Job-test/training clone; bundled spawns are job/custom test contexts, unlike regular base1007/1011",
+      "category": "non_base"
+    },
+    {
+      "id": 1229,
+      "label": "Fabre",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1230,
+      "label": "Pupa",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1231,
+      "label": "Creamy",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1232,
+      "label": "Peco Peco Egg",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1236,
+      "label": "Ant Egg",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1237,
+      "label": "Andre",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1238,
+      "label": "Piere",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1240,
+      "label": "Picky",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1241,
+      "label": "Picky",
+      "reason": "Metamorphosis target clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1247,
+      "label": "Antonio",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1394,
+      "label": "Zombie",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1395,
+      "label": "Wind Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1396,
+      "label": "Earth Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1397,
+      "label": "Fire Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1398,
+      "label": "Water Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1520,
+      "label": "Boiled Rice",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 1559,
+      "label": "Scorpion",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1572,
+      "label": "Drops",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1581,
+      "label": "Vocal",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1585,
+      "label": "Mime Monkey",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 1589,
+      "label": "Mandragora",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1690,
+      "label": "Spring Rabbit",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1725,
+      "label": "Poring",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1726,
+      "label": "Lunatic",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1727,
+      "label": "Savage Babe",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1728,
+      "label": "Baby Desert Wolf",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1747,
+      "label": "Boa",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1750,
+      "label": "Red Plant",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1792,
+      "label": "Soccer Ball",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 1805,
+      "label": "Lord Knight Seyren",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1806,
+      "label": "Assassin Cross Eremes",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1807,
+      "label": "Mastersmith Howard",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1808,
+      "label": "High Priest Margaretha",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1809,
+      "label": "Sniper Cecil",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1810,
+      "label": "High Wizard Kathryne",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1811,
+      "label": "Bandit",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1812,
+      "label": "Delightful Lude",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1815,
+      "label": "Rice Cake",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1816,
+      "label": "Gourd",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1841,
+      "label": "Snake Lord's Minion",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 1854,
+      "label": "Muka",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1857,
+      "label": "Marin",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1858,
+      "label": "Plankton",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1859,
+      "label": "Mandragora",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1860,
+      "label": "Coco",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1862,
+      "label": "Martin",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1877,
+      "label": "Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1878,
+      "label": "Mystic Plant",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1879,
+      "label": "Eclipse",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 1894,
+      "label": "Pouring",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 1898,
+      "label": "Zombie",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1901,
+      "label": "Condor",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1926,
+      "label": "Jakk",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 1927,
+      "label": "Whisper",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 1951,
+      "label": "Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1952,
+      "label": "Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1953,
+      "label": "Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1954,
+      "label": "Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 1955,
+      "label": "Treasure Chest",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 1962,
+      "label": "Christmas Thief",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2012,
+      "label": "Tenacious Zombie",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2025,
+      "label": "Wild Gift Box",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2033,
+      "label": "Golden Tulip",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2034,
+      "label": "Baby Desert Wolf",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 2057,
+      "label": "Strange Mouse",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2066,
+      "label": "Anopheles",
+      "reason": "Exported DB Class Event; event/special variant excluded even if statically spawned",
+      "category": "non_base"
+    },
+    {
+      "id": 2067,
+      "label": "Anopheles",
+      "reason": "Exported DB Class Event; event/special variant excluded even if statically spawned",
+      "category": "non_base"
+    },
+    {
+      "id": 2075,
+      "label": "Ragunta",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2080,
+      "label": "Crystal",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2093,
+      "label": "Botaring",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2150,
+      "label": "Ripe Watermelon",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2200,
+      "label": "Taini",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 2209,
+      "label": "Thief Bug",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2210,
+      "label": "Christmas Snow Rabbit",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2211,
+      "label": "Christmas Teddy Bear",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2218,
+      "label": "Octopus Tentacle",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2219,
+      "label": "Giant Octopus",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2220,
+      "label": "Messenger of Devil",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2245,
+      "label": "Experience Test",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2248,
+      "label": "Golden Poring",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2328,
+      "label": "Drum",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2372,
+      "label": "Soil",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2373,
+      "label": "Rock",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 2374,
+      "label": "Thicket",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 2377,
+      "label": "Novus",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2379,
+      "label": "Socks Stealing Raccoon",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2380,
+      "label": "Gift Stealing Raccoon",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 2401,
+      "label": "Poring",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 2408,
+      "label": "Dummy 10",
+      "reason": "Training dummy/job shooting target, not ordinary field/dungeon mob",
+      "category": "non_base"
+    },
+    {
+      "id": 2413,
+      "label": "Dummy 10",
+      "reason": "Training dummy/job shooting target, not ordinary field/dungeon mob",
+      "category": "non_base"
+    },
+    {
+      "id": 2450,
+      "label": "Thief Poring",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2451,
+      "label": "Strange Baby Orc",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 2573,
+      "label": "Chonchon",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 2577,
+      "label": "Fabre",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 2582,
+      "label": "Lunatic",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 2590,
+      "label": "Rocker",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 2606,
+      "label": "Furious Zombie",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2610,
+      "label": "Wormtail Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2615,
+      "label": "Willow Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2619,
+      "label": "Weak Skeleton Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2646,
+      "label": "Swift Spore",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2653,
+      "label": "Boa Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2670,
+      "label": "Elusive Scorpion",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2671,
+      "label": "Swift Savage Babe",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2678,
+      "label": "Roda Frog Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2679,
+      "label": "Furious Roda Frog",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2680,
+      "label": "Elusive Rocker",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2696,
+      "label": "Poring Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2697,
+      "label": "Furious Poring",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2698,
+      "label": "Elusive Poring",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2699,
+      "label": "Swift Poring",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2712,
+      "label": "Furious Picky",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2765,
+      "label": "Solid Mandragora",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2770,
+      "label": "Solid Lunatic",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2771,
+      "label": "Lunatic Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2776,
+      "label": "Baby Poring Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2798,
+      "label": "Elusive Hornet",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2835,
+      "label": "Solid Fabre",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2836,
+      "label": "Fabre Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2845,
+      "label": "Drops Ringleader",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2855,
+      "label": "Baby Desert Wolf Ringlea",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2856,
+      "label": "Furious Baby Desert Wolf",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2872,
+      "label": "Elusive Chonchon",
+      "reason": "Champion stat variant",
+      "category": "non_base"
+    },
+    {
+      "id": 2925,
+      "label": "Willow",
+      "reason": "Summoned/special clone",
+      "category": "non_base"
+    },
+    {
+      "id": 2936,
+      "label": "Ghostring",
+      "reason": "Exported DB Class Event; event/special variant excluded even if statically spawned",
+      "category": "non_base"
+    },
+    {
+      "id": 3026,
+      "label": "Fire Pit",
+      "reason": "Native death summons have no provable parent ownership."
+    },
+    {
+      "id": 3061,
+      "label": "Angry Mimic",
+      "reason": "Exported DB Class Event; event/special variant excluded even if statically spawned",
+      "category": "non_base"
+    },
+    {
+      "id": 3075,
+      "label": "Treasure",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 3101,
+      "label": "Mana of White",
+      "reason": "Instance/episode mechanic energy object, not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 3102,
+      "label": "Mana of Life",
+      "reason": "Instance/episode mechanic energy object, not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 3103,
+      "label": "Mana of Earth",
+      "reason": "Instance/episode mechanic energy object, not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 3169,
+      "label": "Shooting Target",
+      "reason": "Training dummy/job shooting target, not ordinary field/dungeon mob",
+      "category": "non_base"
+    },
+    {
+      "id": 3170,
+      "label": "Shooting Target",
+      "reason": "Training dummy/job shooting target, not ordinary field/dungeon mob",
+      "category": "non_base"
+    },
+    {
+      "id": 3202,
+      "label": "Organic Pumpkin",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 3203,
+      "label": "Inorganic Pumpkin",
+      "reason": "Event/seasonal/special record identified by Aegis family; not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 3455,
+      "label": "Plate",
+      "reason": "Prontera castle tableware/object record; prt_cas Plate spawn is special quest object",
+      "category": "non_base"
+    },
+    {
+      "id": 3623,
+      "label": "Plasma R",
+      "reason": "Instance/episode mechanic energy object, not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 3624,
+      "label": "Plasma G",
+      "reason": "Instance/episode mechanic energy object, not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 3625,
+      "label": "Plasma B",
+      "reason": "Instance/episode mechanic energy object, not ordinary base species",
+      "category": "non_base"
+    },
+    {
+      "id": 3790,
+      "label": "Sweets Drops",
+      "reason": "Event-class or special/event/quest/training/resource record; no regular eligible base-spawn evidence",
+      "category": "non_base"
+    },
+    {
+      "id": 3797,
+      "label": "ILL_FROZEN_KN",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 3798,
+      "label": "ILL_FROZEN_GC",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 20351,
+      "label": "Manhole",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 22177,
+      "label": "MD_PRI_DRAGON_1",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 22178,
+      "label": "MD_PRI_DRAGON_2",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 22179,
+      "label": "MD_PRI_DRAGON_3",
+      "reason": "Client rendering dependency has not been verified."
+    },
+    {
+      "id": 22180,
+      "label": "MD_PRI_DRAGON_4",
+      "reason": "Client rendering dependency has not been verified."
+    }
+  ],
+  "transforms": {
+    "1007": [
+      1008,
+      1018
+    ],
+    "1008": [
+      1018
+    ],
+    "1047": [
+      1049,
+      1050
+    ]
+  },
+  "children": {
+    "1088": [
+      1052
+    ]
+  },
+  "verified_asset_ids": [
+    1001,
+    1002,
+    1004,
+    1007,
+    1008,
+    1009,
+    1010,
+    1011,
+    1012,
+    1014,
+    1015,
+    1018,
+    1020,
+    1024,
+    1025,
+    1047,
+    1049,
+    1050,
+    1052,
+    1062,
+    1063,
+    1078,
+    1079,
+    1080,
+    1081,
+    1082,
+    1083,
+    1084,
+    1085,
+    1088,
+    1107,
+    1113,
+    1167,
+    1182,
+    1183,
+    1184,
+    1229,
+    1230,
+    1231,
+    1232,
+    1236,
+    1237,
+    1238,
+    1240,
+    1241,
+    1247,
+    1394,
+    1395,
+    1396,
+    1397,
+    1398,
+    1520,
+    1559,
+    1572,
+    1581,
+    1585,
+    1589,
+    1690,
+    1725,
+    1726,
+    1727,
+    1728,
+    1747,
+    1750,
+    1792,
+    1805,
+    1806,
+    1807,
+    1808,
+    1809,
+    1810,
+    1811,
+    1812,
+    1814,
+    1815,
+    1816,
+    1841,
+    1854,
+    1857,
+    1858,
+    1859,
+    1860,
+    1862,
+    1877,
+    1878,
+    1879,
+    1894,
+    1898,
+    1901,
+    1926,
+    1927,
+    1951,
+    1952,
+    1953,
+    1954,
+    1962,
+    2012,
+    2025,
+    2033,
+    2034,
+    2057,
+    2066,
+    2067,
+    2075,
+    2080,
+    2093,
+    2150,
+    2209,
+    2210,
+    2211,
+    2218,
+    2219,
+    2220,
+    2245,
+    2248,
+    2328,
+    2372,
+    2377,
+    2379,
+    2380,
+    2398,
+    2401,
+    2404,
+    2405,
+    2408,
+    2413,
+    2450,
+    2451,
+    2573,
+    2577,
+    2582,
+    2590,
+    2606,
+    2610,
+    2615,
+    2619,
+    2646,
+    2653,
+    2670,
+    2671,
+    2678,
+    2679,
+    2680,
+    2696,
+    2697,
+    2698,
+    2699,
+    2712,
+    2765,
+    2770,
+    2771,
+    2776,
+    2798,
+    2835,
+    2836,
+    2845,
+    2855,
+    2856,
+    2872,
+    2925,
+    2936,
+    3026,
+    3027,
+    3028,
+    3061,
+    3101,
+    3102,
+    3103,
+    3169,
+    3170,
+    3202,
+    3203,
+    3455,
+    3495,
+    3496,
+    3497,
+    3498,
+    3499,
+    3500,
+    3501,
+    3623,
+    3624,
+    3625,
+    3742,
+    3743,
+    3790,
+    1077
+  ],
+  "evidence": {
+    "export-mob-db.yml": "257a5352448c89b31820400f62f159059a6186949b5ebf423fe3a7b10d13aa62",
+    "catalog-assets.json": "c1f63054def887229822df9b4423844932651f04944bd1c79960597a0b4e67a0",
+    "level1-18-skills.txt": "dfe6254aa7dc89453c3cf1cb00fca52fcc977c8c93ce5e2d1e892588e239762f",
+    "pinned-mob.cpp": "4a5691708b1774c129089237d8380c2bf5c689d68a78a03483bd751fdcf63aa7",
+    "base-spawn-classification.json": "e215e3e3d7781e4fba09ab2e777c8b5060fd6152c8348e834cc6be7ef674cb58",
+    "base-spawn-evidence.json": "a6f596d7f2438e2b34af759fe4b4f43db9ea8008b79944edc1e18038cc7baa63"
+  },
+  "hp_source": {
+    "scope": "Exported Renewal database base HP before runtime battle HP multipliers",
+    "missing_hp_default": 1,
+    "default_evidence": "local/catalog-discovery-20261002/pinned-mob.cpp:4950,5053-5060",
+    "defaulted_ids": []
+  },
+  "selection_scope": "base_field_dungeon",
+  "selection_policy": {
+    "description": "Permanent ordinary field/dungeon base spawns, including natural harvest resources and base miniboss; exclude event/summon/champion/job/quest/special variants",
+    "previous_selectable_count": 182,
+    "retired_count": 138,
+    "stationary_natural_resources": true,
+    "base_minibosses": true,
+    "live_spawn_verified": false,
+    "evidence": "local/base-catalog-review-20261002/classification.json"
+  },
+  "audited_scope_extensions": [
+    1077
+  ]
+}

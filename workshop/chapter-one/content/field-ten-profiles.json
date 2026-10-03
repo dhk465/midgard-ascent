@@ -1,0 +1,415 @@
+{
+  "schema_version": 1,
+  "coordinate_units": "origin: source GND cells; layout: cropped GAT cells",
+  "verification": "Pinned native habitat and local GAT checks; runtime NOT_RUN",
+  "maps": [
+    {
+      "id": "ohkt01",
+      "source": "prt_fild08",
+      "origin": [
+        44,
+        136
+      ],
+      "policy": "reviewed_tree",
+      "rationale": "Original approved training-ground crop",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 5990,
+        "total_cells": 6400,
+        "source_gat_sha256": "bb7908930002a276e59efd0dbc2c46efa15f05a01e6573ee7b78d9a2b1b4a0f0"
+      },
+      "habitat_mob_ids": [
+        1002,
+        1063
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L94",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1002,
+          "line": 94
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L95",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1063,
+          "line": 95
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L97",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1002,
+          "line": 97
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L98",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1063,
+          "line": 98
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L100",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1002,
+          "line": 100
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L101",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1063,
+          "line": 101
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L103",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1002,
+          "line": 103
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L104",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1002,
+          "line": 104
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L105",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1002,
+          "line": 105
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L106",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1063,
+          "line": 106
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L107",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1063,
+          "line": 107
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L108",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1063,
+          "line": 108
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L109",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1063,
+          "line": 109
+        }
+      ]
+    },
+    {
+      "id": "ohkt02",
+      "source": "pay_fild04",
+      "origin": [
+        112,
+        120
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 5917,
+        "total_cells": 6400,
+        "source_gat_sha256": "262af14267b749cd2b6d1330ba356db360121aa934dcce40441aed4d9baf2f40"
+      },
+      "habitat_mob_ids": [
+        1002,
+        1113
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/payon.txt#L50",
+          "source_sha256": "88f1d0a2c76de75c98790a34d01cde14d5e3a044d4b5338cc3865240d33677fc",
+          "mob_id": 1113,
+          "line": 50
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/payon.txt#L51",
+          "source_sha256": "88f1d0a2c76de75c98790a34d01cde14d5e3a044d4b5338cc3865240d33677fc",
+          "mob_id": 1002,
+          "line": 51
+        }
+      ]
+    },
+    {
+      "id": "ohkt03",
+      "source": "prt_fild01",
+      "origin": [
+        82,
+        30
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 5935,
+        "total_cells": 6400,
+        "source_gat_sha256": "7cfc6c951e8f49c2b3aa766075956f16670c5fe45f92b874d756dde738ca46ef"
+      },
+      "habitat_mob_ids": [
+        1002,
+        1063
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L29",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1063,
+          "line": 29
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L30",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1002,
+          "line": 30
+        }
+      ]
+    },
+    {
+      "id": "ohkt04",
+      "source": "gef_fild04",
+      "origin": [
+        74,
+        24
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 4816,
+        "total_cells": 6400,
+        "source_gat_sha256": "d78cd7a8623e233fc8e0bf646253837d2a2d547b42e79b8f88dc6b845167ea70"
+      },
+      "habitat_mob_ids": [
+        1011,
+        1063
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/geffen.txt#L84",
+          "source_sha256": "3a953deb5804e1e3cd7ab79df48a5a2c09dc1227b6851ffb1ef3973c1bb64370",
+          "mob_id": 1063,
+          "line": 84
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/geffen.txt#L86",
+          "source_sha256": "3a953deb5804e1e3cd7ab79df48a5a2c09dc1227b6851ffb1ef3973c1bb64370",
+          "mob_id": 1011,
+          "line": 86
+        }
+      ]
+    },
+    {
+      "id": "ohkt05",
+      "source": "pay_fild01",
+      "origin": [
+        40,
+        56
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 4851,
+        "total_cells": 6400,
+        "source_gat_sha256": "f01e81cc75c66bdac72683a2bd49d1fd3d3731097c1272c7c4149b3b3be8aea5"
+      },
+      "habitat_mob_ids": [
+        1002,
+        1010
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/payon.txt#L21",
+          "source_sha256": "88f1d0a2c76de75c98790a34d01cde14d5e3a044d4b5338cc3865240d33677fc",
+          "mob_id": 1010,
+          "line": 21
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/payon.txt#L22",
+          "source_sha256": "88f1d0a2c76de75c98790a34d01cde14d5e3a044d4b5338cc3865240d33677fc",
+          "mob_id": 1002,
+          "line": 22
+        }
+      ]
+    },
+    {
+      "id": "ohkt06",
+      "source": "prt_fild05",
+      "origin": [
+        116,
+        118
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 5946,
+        "total_cells": 6400,
+        "source_gat_sha256": "b7995a2d95da02d418e16de7ed4c34eb00b31fda25960d4acbd3e2b905e6336d"
+      },
+      "habitat_mob_ids": [
+        1004
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L69",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1004,
+          "line": 69
+        }
+      ]
+    },
+    {
+      "id": "ohkt07",
+      "source": "moc_fild12",
+      "origin": [
+        60,
+        54
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 6074,
+        "total_cells": 6400,
+        "source_gat_sha256": "2fe4ca66b7b1c3f0c880c1235a2af6c8369fbeeabee9b2df31e8953bc4663d7f"
+      },
+      "habitat_mob_ids": [
+        1009,
+        1113
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/morocc.txt#L112",
+          "source_sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c",
+          "mob_id": 1113,
+          "line": 112
+        },
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/morocc.txt#L113",
+          "source_sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c",
+          "mob_id": 1009,
+          "line": 113
+        }
+      ]
+    },
+    {
+      "id": "ohkt08",
+      "source": "gef_fild01",
+      "origin": [
+        100,
+        66
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 6068,
+        "total_cells": 6400,
+        "source_gat_sha256": "51438b7ccc1971dc41bb8a1d9f2293ff5d9de68448cd4e6b5c410a87f557b0f1"
+      },
+      "habitat_mob_ids": [
+        1012
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/geffen.txt#L32",
+          "source_sha256": "3a953deb5804e1e3cd7ab79df48a5a2c09dc1227b6851ffb1ef3973c1bb64370",
+          "mob_id": 1012,
+          "line": 32
+        }
+      ]
+    },
+    {
+      "id": "ohkt09",
+      "source": "prt_fild07",
+      "origin": [
+        122,
+        126
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 8979,
+        "total_cells": 10000,
+        "source_gat_sha256": "06c3ddd9ddaf5ada2777abcfc1f2d340c93bc295397dd1ae1a644215de8ff560"
+      },
+      "habitat_mob_ids": [
+        1052
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/prontera.txt#L86",
+          "source_sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "mob_id": 1052,
+          "line": 86
+        }
+      ]
+    },
+    {
+      "id": "ohkt10",
+      "source": "pay_fild08",
+      "origin": [
+        36,
+        50
+      ],
+      "policy": "outdoor",
+      "rationale": "Native field habitat; existing fixed battle layout retained",
+      "evidence": {
+        "reachable": true,
+        "target_clearance_cells": 2,
+        "minimum_spawn_distance": 5.656854,
+        "minimum_entry_spawn_distance": 21.540659,
+        "walkable_cells": 8414,
+        "total_cells": 10000,
+        "source_gat_sha256": "4bdda34607caf51af35966ea851cc6fd7d9a0163641ac14580762bc28336f74c"
+      },
+      "habitat_mob_ids": [
+        1014
+      ],
+      "spawn_sources": [
+        {
+          "url": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/npc/re/mobs/fields/payon.txt#L85",
+          "source_sha256": "88f1d0a2c76de75c98790a34d01cde14d5e3a044d4b5338cc3865240d33677fc",
+          "mob_id": 1014,
+          "line": 85
+        }
+      ]
+    }
+  ]
+}

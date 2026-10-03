@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tower wave settings</title><link rel="stylesheet" href="style.css"><script defer src="model.js"></script><script defer src="settings.js"></script></head>
+<body><main>
+<h1 id="bank-heading">Tower settings</h1>
+<p>Choose the wave count and monsters for each floor. The recommended wave count is 3–5. Maps and background music are preserved.</p>
+<p class="note">Save stores the app's JSON settings. To use saved settings on the server, select Apply to server separately. Applying restarts the server.</p>
+<div id="status" role="status" aria-live="polite">Loading settings…</div>
+<div id="editor" hidden>
+<div class="toolbar"><label>Floor <select id="floor"></select></label><label>Wave count <input id="wave-count" type="number" min="1" max="20" step="1"></label></div>
+<div class="buttons"><span id="bulk-label">Wave count for all floors in this bank:</span><button data-preset="3">3 waves</button><button data-preset="4">4 waves</button><button data-preset="5">5 waves</button></div>
+<p>Choose 1–4 active monster groups per wave. Hidden groups keep their stored settings. Each group accepts 0–8 monsters; active groups in each wave must total 1–8. Reducing the wave count preserves hidden wave settings.</p>
+<p>Monster HP shows base database values. Server modifiers can change combat HP; the server enforces a minimum of 1 HP.</p>
+<p>Choices include base field and dungeon monsters, natural plants and resources, and base field bosses. Event, summoned, champion and special-purpose variants are excluded.</p>
+<p id="catalog-profile" class="note"></p><details id="catalog-exclusions" hidden><summary>Excluded event, special-purpose or unverified monsters</summary><ul id="excluded-list"></ul></details>
+<div id="waves"></div>
+<div class="buttons"><button id="save">Save</button><button id="apply">Apply to server (restart)</button><button id="refresh">Reload saved settings</button><button id="reset">Restore defaults</button></div>
+<div class="buttons"><button id="export">Export JSON</button><label class="import">Import JSON<input id="import" type="file" accept="application/json,.json"></label></div>
+<p class="note">Import and Restore defaults only change the editor. Select Save to persist them. JSON preserves 20 waves per floor, including unused waves.</p>
+</div></main></body></html>

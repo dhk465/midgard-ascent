@@ -1,0 +1,403 @@
+// Authored logical floors (capacity 200) + OPTIONAL native boss encounters.
+// Extends the exclusive-session design in first-floor. NOT native-engine tested.
+// States: 0 IDLE,1 READY,2 COUNTDOWN,3 SPAWNING,4 ACTIVE,5 INTERWAVE,
+// 6 SETTLING,7 CLEARED,8 ABORT_REQUESTED,9 BLOCKED,10 TRANSITION,11 LOADING.
+// Global temporary state is deliberate: ONE owner across all ten maps.
+// JSON is compiled to the following data helpers, not loaded by the game.
+__DATA_FUNCTIONS__
+
+function	script	F_OHKC_Elapsed	{
+	return ((gettimetick(0)-getarg(0)+4294967296)%4294967296);
+}
+function	script	F_OHKC_Live	{
+	if (!isloggedin($@ohkc_aid,$@ohkc_cid)) return 0;
+	if (readparam(Hp,$@ohkc_cid)<=0) return 0;
+	if (getmapxy(.@map$,.@x,.@y,BL_PC,$@ohkc_aid)!=0) return 0;
+	return .@map$==$@ohkc_map$;
+}
+function	script	F_OHKC_Owner	{
+	if (!playerattached() || Hp<=0) return 0;
+	return getcharid(0)==$@ohkc_cid && getcharid(3)==$@ohkc_aid && getarg(0)==$@ohkc_epoch && strcharinfo(3)==$@ohkc_map$;
+}
+function	script	F_OHKC_Authorized	{
+	if (!isloggedin($@ohkc_aid,$@ohkc_cid)) return 0;
+	.@e=getarg(0);
+	.@h=getvar(ohkt_main_clear,$@ohkc_cid);
+	if (callfunc("F_OHKC_IsNormal",.@e)) return .@e<=.@h+1;
+	if (callfunc("F_OHKC_TrialIndex",.@e)>=0) return .@h>=callfunc("F_OHKC_TrialUnlock",.@e);
+	return 0;
+}
+function	script	F_OHKC_Visibility	{
+	for (.@n=1; .@n<=10; .@n++) {
+		disablenpc "ohkc_r"+.@n;
+		disablenpc "ohkc_k"+.@n;
+	}
+	if (getarg(0)==1) enablenpc "ohkc_r"+callfunc("F_OHKC_MapNo",$@ohkc_enc);
+	if (getarg(0)==7) enablenpc "ohkc_k"+callfunc("F_OHKC_MapNo",$@ohkc_enc);
+	return 1;
+}
+function	script	F_OHKC_Proof	{
+	// Prove ownership from DIRECT root GIDs or native master_id linkage.
+	// No whitelist-by-species-only, no accumulating historical child IDs.
+	if (!callfunc("F_OHKC_IsMap",$@ohkc_map$)) return 0;
+	.@n=getmapunits(BL_MOB,$@ohkc_map$,.@g[0]);
+	for (.@i=0; .@i<.@n; .@i++) {
+		if (!unitexists(.@g[.@i]) || getunittype(.@g[.@i])!=BL_MOB) return 0;
+		getunitdata .@g[.@i],.@u;
+		.@known=0;
+		for (.@j=0; .@j<$@ohkc_count; .@j++) {
+			if (.@g[.@i]==$@ohkc_gid[.@j] && .@u[UMOB_CLASS]==$@ohkc_class[.@j] && .@u[UMOB_MASTERAID]==0) {
+				if (!$@ohkc_dead[.@j] || .@u[UMOB_HP]<=0) .@known=1;
+			}
+			if (.@u[UMOB_MASTERAID]==$@ohkc_gid[.@j] && callfunc("F_OHKC_Child",$@ohkc_enc,.@u[UMOB_CLASS])) .@known=1;
+		}
+		if (!.@known) return 0;
+	}
+	return 1;
+}
+function	script	F_OHKC_Cleanup	{
+	$@ohkc_state=9;
+	$@ohkc_epoch++;
+	$@ohkc_error$=getarg(0);
+	callfunc "F_OHKC_Visibility",0;
+	debugmes "[OHKC] cleanup: "+$@ohkc_error$;
+	if (callfunc("F_OHKC_IsMap",$@ohkc_map$)) {
+		if (!callfunc("F_OHKC_Proof")) {
+			debugmes "[OHKC] BLOCKED foreign unit: nothing removed.";
+			return 0;
+		}
+		// Check live roots have not escaped or been replaced before map cleanup.
+		for (.@j=0; .@j<$@ohkc_count; .@j++) {
+			if (unitexists($@ohkc_gid[.@j]) && !$@ohkc_dead[.@j]) {
+				if (getunittype($@ohkc_gid[.@j])!=BL_MOB) return 0;
+				getunitdata $@ohkc_gid[.@j],.@u;
+				if (.@u[UMOB_CLASS]!=$@ohkc_class[.@j] || mapid2name(.@u[UMOB_MAPID])!=$@ohkc_map$) return 0;
+			}
+		}
+		// Guarded map-local removal, normal kill hook suppressed in pinned source.
+		// The engine may return items already held by looters. Never erase loot.
+		killmonster $@ohkc_map$,"",0;
+		if (getmapunits(BL_MOB,$@ohkc_map$)!=0) return 0;
+	}
+	$@ohkc_count=0;
+	$@ohkc_wave=0;
+	$@ohkc_aid=0;
+	$@ohkc_cid=0;
+	$@ohkc_map$="";
+	$@ohkc_state=0;
+	return 1;
+}
+function	script	F_OHKC_Return	{
+	if (!playerattached() || Hp<=0 || !$@ohkc_site_ok) return 0;
+	if (!callfunc("F_OHKC_IsMap",strcharinfo(3))) return 0;
+	if (!checkcell("prontera",__RETURN_X__,__RETURN_Y__,cell_chkpass)) return 0;
+	warp "prontera",__RETURN_X__,__RETURN_Y__;
+	return 1;
+}
+function	script	F_OHKC_Queue	{
+	.@target=getarg(0);
+	if (!callfunc("F_OHKC_Owner",getarg(1))) return 0;
+	if ($@ohkc_state!=0 && $@ohkc_state!=7) return 0;
+	if (!callfunc("F_OHKC_Authorized",.@target)) return 0;
+	.@targetmap$=callfunc("F_OHKC_Map",.@target);
+	if (getmapunits(BL_MOB,.@targetmap$)!=0) return 0;
+	if (getmapusers(.@targetmap$)!=(.@targetmap$==$@ohkc_map$ ? 1 : 0)) return 0;
+	if (callfunc("F_OHKC_IsMap",$@ohkc_map$) && getmapunits(BL_MOB,$@ohkc_map$)!=0) return 0;
+	$@ohkc_epoch++;
+	$@ohkc_next=.@target;
+	$@ohkc_state=10;
+	$@ohkc_started=gettimetick(0);
+	callfunc "F_OHKC_Visibility",0;
+	return 1;
+}
+function	script	F_OHKC_Move	{
+	if ($@ohkc_state!=10 || !callfunc("F_OHKC_Live")) return 0;
+	if (!callfunc("F_OHKC_Authorized",$@ohkc_next)) return 0;
+	.@dest$=callfunc("F_OHKC_Map",$@ohkc_next);
+	.@ex=callfunc("F_OHKC_EntryX",$@ohkc_next);
+	.@ey=callfunc("F_OHKC_EntryY",$@ohkc_next);
+	if (getmapunits(BL_MOB,.@dest$)!=0 || getmapusers(.@dest$)!=(.@dest$==$@ohkc_map$ ? 1 : 0)) return 0;
+	if (!checkcell(.@dest$,.@ex,.@ey,cell_chkpass)) return 0;
+	$@ohkc_enc=$@ohkc_next;
+	$@ohkc_map$=.@dest$;
+	$@ohkc_wave=0;
+	$@ohkc_count=0;
+	$@ohkc_committed=0;
+	// pc_setpos changes the owner's map before client load acknowledgement adds
+	// them to map users. Do not mistake that bounded zero-user interval for intrusion.
+	$@ohkc_state=11;
+	$@ohkc_started=gettimetick(0);
+	// Native warp supports an optional character ID; no attachrid/dialog theft.
+	warp .@dest$,.@ex,.@ey,$@ohkc_cid;
+	return 1;
+}
+function	script	F_OHKC_StartWave	{
+	if ($@ohkc_state!=2 && $@ohkc_state!=5) return 0;
+	if (!callfunc("F_OHKC_Live") || getmapusers($@ohkc_map$)!=1 || getmapunits(BL_MOB,$@ohkc_map$)!=0) {
+		callfunc "F_OHKC_Cleanup","E_START_NOT_EMPTY_OR_OWNER";
+		return 0;
+	}
+	$@ohkc_wave++;
+	$@ohkc_expected=0;
+	callfunc "F_OHKC_Roster",$@ohkc_enc,$@ohkc_wave;
+	if ($@ohkc_expected<1 || $@ohkc_expected>8) {
+		callfunc "F_OHKC_Cleanup","E_ROSTER";
+		return 0;
+	}
+	$@ohkc_state=3;
+	$@ohkc_count=0;
+	cleararray $@ohkc_dead[0],0,8;
+	cleararray $@ohkc_missing[0],0,8;
+	for (.@i=0; .@i<$@ohkc_expected; .@i++) {
+		.@x=callfunc("F_OHKC_SpawnX",$@ohkc_enc,.@i);
+		.@y=callfunc("F_OHKC_SpawnY",$@ohkc_enc,.@i);
+		if (!checkcell($@ohkc_map$,.@x,.@y,cell_chkpass)) {
+			callfunc "F_OHKC_Cleanup","E_SPAWN_CELL";
+			return 0;
+		}
+		$@mobid[0]=0;
+		// NO event label, level, AI, size, EXP, damage or drop override.
+		monster $@ohkc_map$,.@x,.@y,"--ja--",$@ohkc_roster[.@i],1;
+		.@gid=$@mobid[0];
+		if (.@gid<=0 || !unitexists(.@gid)) {
+			callfunc "F_OHKC_Cleanup","E_SPAWN_FAILED";
+			return 0;
+		}
+		for (.@j=0; .@j<$@ohkc_count; .@j++) {
+			if ($@ohkc_gid[.@j]==.@gid) {
+				callfunc "F_OHKC_Cleanup","E_DUPLICATE_GID";
+				return 0;
+			}
+		}
+		$@ohkc_gid[$@ohkc_count]=.@gid;
+		$@ohkc_class[$@ohkc_count]=$@ohkc_roster[.@i];
+		$@ohkc_count++;
+	}
+	$@ohkc_state=4;
+	mapannounce $@ohkc_map$,"[도전의 탑] "+callfunc("F_OHKC_Name",$@ohkc_enc)+" · "+$@ohkc_wave+"/"+callfunc("F_OHKC_Waves",$@ohkc_enc)+" 시작!",bc_map;
+	callfunc "F_OHKC_AllRootsDead";
+	return 1;
+}
+function	script	F_OHKC_AllRootsDead	{
+	if ($@ohkc_state!=4 || $@ohkc_count!=$@ohkc_expected || $@ohkc_count<1) return 0;
+	for (.@i=0; .@i<$@ohkc_count; .@i++) if (!$@ohkc_dead[.@i]) return 0;
+	// Every wave settles after legitimate root kills. Native slave removals
+	// do not have to fire player kill callbacks; do not count them as roots.
+	$@ohkc_state=6;
+	$@ohkc_started=gettimetick(0);
+	return 1;
+}
+function	script	F_OHKC_Settle	{
+	if ($@ohkc_state!=6 || !callfunc("F_OHKC_Live")) return 0;
+	if (!callfunc("F_OHKC_Proof") || getmapusers($@ohkc_map$)!=1) {
+		callfunc "F_OHKC_Cleanup","E_SETTLE_FOREIGN";
+		return 0;
+	}
+	if (getmapunits(BL_MOB,$@ohkc_map$)!=0) {
+		if (callfunc("F_OHKC_Elapsed",$@ohkc_started)>=__SETTLE_LIMIT__) callfunc "F_OHKC_Cleanup","E_NATIVE_SLAVES_REMAIN";
+		return 0;
+	}
+	if ($@ohkc_wave<callfunc("F_OHKC_Waves",$@ohkc_enc)) {
+		$@ohkc_state=5;
+		// Between-waves deadline is measured from the last root kill,
+		// rather than adding the settling tick on top of the requested delay.
+		$@ohkc_wait=__BETWEEN_MS__;
+		$@ohkc_last_countdown=0;
+		mapannounce $@ohkc_map$,"[도전의 탑] 웨이브 완료. " + (__BETWEEN_MS__/1000) + "초 간격으로 다음 웨이브를 시작합니다.",bc_map;
+		return 1;
+	}
+	if (!$@ohkc_committed) {
+		// Native setd/getvar address an ONLINE character without attachment.
+		if (callfunc("F_OHKC_IsNormal",$@ohkc_enc)) {
+			.@h=getvar(ohkt_main_clear,$@ohkc_cid);
+			if ($@ohkc_enc>.@h+1) { callfunc "F_OHKC_Cleanup","E_NONCONTIGUOUS_CLEAR"; return 0; }
+			setd "ohkt_main_clear",max(.@h,$@ohkc_enc),$@ohkc_cid;
+			if (getvar(ohkt_main_clear,$@ohkc_cid)<$@ohkc_enc) { callfunc "F_OHKC_Cleanup","E_SAVE_READBACK"; return 0; }
+		} else {
+			.@idx=callfunc("F_OHKC_TrialIndex",$@ohkc_enc);
+			if (.@idx<0) { callfunc "F_OHKC_Cleanup","E_UNKNOWN_TRIAL"; return 0; }
+			setd "ohkt_trial_done["+.@idx+"]",1,$@ohkc_cid;
+			if (getvar(ohkt_trial_done[.@idx],$@ohkc_cid)!=1) { callfunc "F_OHKC_Cleanup","E_SAVE_READBACK"; return 0; }
+		}
+		$@ohkc_committed=1;
+	}
+	$@ohkc_state=7;
+	callfunc "F_OHKC_Visibility",7;
+	mapannounce $@ohkc_map$,"[도전의 탑] 완료! 전리품을 확인한 뒤 기록관에게 말을 걸어주세요.",bc_map;
+	return 1;
+}
+function	script	F_OHKC_PickFloor	{
+	.@limit=min(callfunc("F_OHKC_MaxFloor"),ohkt_main_clear+1);
+	.@chapters=(.@limit+9)/10;
+	.@menu$="";
+	for (.@c=1; .@c<=.@chapters; .@c++) .@menu$+=((.@c-1)*10+1)+"~"+min(.@c*10,.@limit)+"층:";
+	.@chapter=select(.@menu$+"취소");
+	if (.@chapter>.@chapters) return 0;
+	.@first=(.@chapter-1)*10+1;
+	.@last=min(.@chapter*10,.@limit);
+	.@menu$="";
+	for (.@f=.@first; .@f<=.@last; .@f++) .@menu$+=.@f+"층:";
+	.@pick=select(.@menu$+"취소");
+	if (.@pick>.@last-.@first+1) return 0;
+	return .@first+.@pick-1;
+}
+function	script	F_OHKC_PickBoss	{
+	if (ohkt_main_clear<10) { mes "일반 10층 완료 후 선택할 수 있습니다."; return 0; }
+	.@pick=select("마스터링 시련:보컬 시련:취소");
+	if (.@pick==3) return 0;
+	mes callfunc("F_OHKC_Warning",callfunc("F_OHKC_TrialPick",.@pick));
+	if (select("위험을 확인하고 도전:취소")!=1) return 0;
+	return callfunc("F_OHKC_TrialPick",.@pick);
+}
+function	script	F_OHKC_ReadyMenu	{
+	.@epoch=$@ohkc_epoch;
+	if ($@ohkc_state!=1 || strcharinfo(3)!=getarg(0) || !callfunc("F_OHKC_Owner",.@epoch)) end;
+	mes "[도전 준비]";
+	mes callfunc("F_OHKC_Name",$@ohkc_enc);
+	mes "테마: "+callfunc("F_OHKC_Theme",$@ohkc_enc);
+	.@waves=callfunc("F_OHKC_Waves",$@ohkc_enc);
+	for (.@w=1; .@w<=.@waves; .@w++) {
+		mes callfunc("F_OHKC_WaveInfo",$@ohkc_enc,.@w);
+		// Bound each dialogue turn even with the maximum twenty configured waves.
+		if (.@w%3==0 && .@w<.@waves) {
+			next;
+			if ($@ohkc_state!=1 || !callfunc("F_OHKC_Owner",.@epoch)) close;
+			mes "[도전 준비 · 계속]";
+		}
+	}
+	mes "현재 서버의 원래 몬스터·스킬·보상을 사용합니다. 자동 회복은 없습니다.";
+	if (!callfunc("F_OHKC_IsNormal",$@ohkc_enc)) mes callfunc("F_OHKC_Warning",$@ohkc_enc);
+	.@pick=select("준비 완료:프론테라 귀환:더 준비하기");
+	if ($@ohkc_state!=1 || !callfunc("F_OHKC_Owner",.@epoch)) close;
+	if (.@pick==3) close;
+	close2;
+	if (.@pick==2) { callfunc "F_OHKC_Cleanup","RETURN_READY"; callfunc "F_OHKC_Return"; end; }
+	$@ohkc_state=2;
+	$@ohkc_started=gettimetick(0);
+	$@ohkc_wait=(!callfunc("F_OHKC_IsNormal",$@ohkc_enc) ? __BOSS_MS__ : __FIRST_MS__);
+	$@ohkc_last_countdown=0;
+	callfunc "F_OHKC_Visibility",0;
+	mapannounce $@ohkc_map$,"[도전의 탑] "+($@ohkc_wait/1000)+"초 뒤 시작합니다.",bc_map;
+	end;
+}
+function	script	F_OHKC_KeeperMenu	{
+	.@epoch=$@ohkc_epoch;
+	if ($@ohkc_state!=7 || strcharinfo(3)!=getarg(0) || !callfunc("F_OHKC_Owner",.@epoch)) end;
+	mes "[탑 기록관]";
+	mes callfunc("F_OHKC_Name",$@ohkc_enc)+" 완료. 바닥의 전리품을 확인하세요.";
+	.@pick=select("다음 일반층:같은 전투 재도전:일반층 선택:선택형 보스전:프론테라 귀환:머무르기");
+	if ($@ohkc_state!=7 || !callfunc("F_OHKC_Owner",.@epoch)) close;
+	.@target=0;
+	if (.@pick==6) close;
+	if (.@pick==1) {
+		if (!callfunc("F_OHKC_IsNormal",$@ohkc_enc) || $@ohkc_enc>=callfunc("F_OHKC_MaxFloor")) { mes "현재 제작된 일반층은 "+callfunc("F_OHKC_MaxFloor")+"층까지입니다."; close; }
+		.@target=$@ohkc_enc+1;
+	}
+	if (.@pick==2) .@target=$@ohkc_enc;
+	if (.@pick==3) .@target=callfunc("F_OHKC_PickFloor");
+	if (.@pick==4) .@target=callfunc("F_OHKC_PickBoss");
+	if ($@ohkc_state!=7 || !callfunc("F_OHKC_Owner",.@epoch)) close;
+	if (.@pick==5) { close2; callfunc "F_OHKC_Cleanup","RETURN_CLEAR"; callfunc "F_OHKC_Return"; end; }
+	if (.@target==0) close;
+	close2;
+	if (!callfunc("F_OHKC_Queue",.@target,.@epoch)) dispbottom "[도전의 탑] 이동 조건이 바뀌었습니다. 잠시 후 다시 선택하세요.";
+	end;
+}
+
+__GATEWAY__
+__MAP_NPCS__
+
+-	script	ohkc_engine	-1,{
+	end;
+OnInit:
+	$@ohkc_site_ok=__SITE_OK__;
+	// Preserve owned roots through reload until cleanup has inspected them.
+	callfunc "F_OHKC_Cleanup","INIT_OR_RELOAD";
+__IDENTITY_CHECKS__
+	initnpctimer;
+	end;
+OnTimer1000:
+	stopnpctimer;
+	if ($@ohkc_state==8) callfunc "F_OHKC_Cleanup",$@ohkc_error$;
+	if ($@ohkc_state>=1 && $@ohkc_state<=7 || $@ohkc_state==10 || $@ohkc_state==11) {
+		if (!callfunc("F_OHKC_Live")) {
+			callfunc "F_OHKC_Cleanup","E_OWNER_LEFT_OR_DIED";
+		} else if ($@ohkc_state==10) {
+			if (callfunc("F_OHKC_Elapsed",$@ohkc_started)>=__TRANSITION_MS__)
+				if (!callfunc("F_OHKC_Move")) callfunc "F_OHKC_Cleanup","E_MOVE_PRECONDITION";
+		} else if ($@ohkc_state==11) {
+			if (getmapusers($@ohkc_map$)>1 || !callfunc("F_OHKC_Proof")) {
+				callfunc "F_OHKC_Cleanup","E_LOAD_FOREIGN_ACTOR";
+			} else if (getmapusers($@ohkc_map$)==1) {
+				$@ohkc_state=1;
+				callfunc "F_OHKC_Visibility",1;
+			} else if (callfunc("F_OHKC_Elapsed",$@ohkc_started)>=30000) {
+				callfunc "F_OHKC_Cleanup","E_LOAD_TIMEOUT";
+			}
+		} else if (getmapusers($@ohkc_map$)!=1 || !callfunc("F_OHKC_Proof")) {
+			debugmes "[OHKC] actor check: state="+$@ohkc_state+" map="+$@ohkc_map$+" users="+getmapusers($@ohkc_map$)+" mobs="+getmapunits(BL_MOB,$@ohkc_map$)+" live="+callfunc("F_OHKC_Live")+" proof="+callfunc("F_OHKC_Proof");
+			callfunc "F_OHKC_Cleanup","E_FOREIGN_ACTOR";
+		} else if ($@ohkc_state==4) {
+			for (.@i=0; .@i<$@ohkc_count; .@i++) {
+				if (!$@ohkc_dead[.@i]) {
+					if (!unitexists($@ohkc_gid[.@i])) {
+						$@ohkc_missing[.@i]++;
+						if ($@ohkc_missing[.@i]>=3) { callfunc "F_OHKC_Cleanup","E_MISSING_KILL_EVENT"; break; }
+					} else {
+						$@ohkc_missing[.@i]=0;
+						if (getunittype($@ohkc_gid[.@i])!=BL_MOB) { callfunc "F_OHKC_Cleanup","E_ROOT_TYPE"; break; }
+						getunitdata $@ohkc_gid[.@i],.@u;
+						if (.@u[UMOB_CLASS]!=$@ohkc_class[.@i] || mapid2name(.@u[UMOB_MAPID])!=$@ohkc_map$) { callfunc "F_OHKC_Cleanup","E_ROOT_TRANSFORM_OR_ESCAPE"; break; }
+					}
+				}
+			}
+		} else if ($@ohkc_state==6) {
+			if (callfunc("F_OHKC_Elapsed",$@ohkc_started)>=__CLEAR_MS__) callfunc "F_OHKC_Settle";
+		} else if ($@ohkc_state==2 || $@ohkc_state==5) {
+			.@elapsed=callfunc("F_OHKC_Elapsed",$@ohkc_started);
+			if (.@elapsed>=$@ohkc_wait) {
+				callfunc "F_OHKC_StartWave";
+			} else {
+				.@left=($@ohkc_wait-.@elapsed+999)/1000;
+				if (.@left<=3 && .@left!=$@ohkc_last_countdown) {
+					$@ohkc_last_countdown=.@left;
+					mapannounce $@ohkc_map$,"[도전의 탑] "+.@left+"...",bc_map;
+				}
+			}
+		}
+	}
+	initnpctimer;
+	end;
+OnNPCKillEvent:
+	// No yielding/delayed calls. Keep the ordinary global hook for other mods.
+	if ($@ohkc_state!=3 && $@ohkc_state!=4) end;
+	if (!callfunc("F_OHKC_Owner",$@ohkc_epoch)) end;
+	.@idx=-1;
+	for (.@i=0; .@i<$@ohkc_count; .@i++)
+		if (killedgid==$@ohkc_gid[.@i] && killedrid==$@ohkc_class[.@i]) .@idx=.@i;
+	// Native child deaths still reach other mods but never count as root kills.
+	if (.@idx<0 || $@ohkc_dead[.@idx]) end;
+	if (unitexists(killedgid)) {
+		if (getunittype(killedgid)!=BL_MOB) end;
+		getunitdata killedgid,.@u;
+		if (.@u[UMOB_HP]>0 || .@u[UMOB_CLASS]!=$@ohkc_class[.@idx]) end;
+	}
+	if (getmapusers($@ohkc_map$)!=1 || !callfunc("F_OHKC_Proof")) {
+		$@ohkc_state=8;
+		$@ohkc_error$="E_FOREIGN_DURING_KILL";
+		end;
+	}
+	$@ohkc_dead[.@idx]=1;
+	callfunc "F_OHKC_AllRootsDead";
+	end;
+OnPCDieEvent:
+OnPCLogoutEvent:
+	if (!playerattached()) end;
+	if (getcharid(0)==$@ohkc_cid && getcharid(3)==$@ohkc_aid) callfunc "F_OHKC_Cleanup","OWNER_DIED_OR_LOGGED_OUT";
+	end;
+OnPCLoginEvent:
+OnPCLoadMapEvent:
+	if (!playerattached() || Hp<=0 || !callfunc("F_OHKC_IsMap",strcharinfo(3))) end;
+	if (!callfunc("F_OHKC_Owner",$@ohkc_epoch) || $@ohkc_state==0 || $@ohkc_state==9) callfunc "F_OHKC_Return";
+	end;
+}

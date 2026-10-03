@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "app_version": "1.4.3",
+  "era": "renewal",
+  "isolated_test_home_confirmed": false,
+  "prontera_positions_checked": false,
+  "effective_roster_and_skills_reviewed": false,
+  "native_boss_summons_reviewed": false,
+  "conflicting_map_mods_disabled_in_test_home": false,
+  "npc_encoding": null,
+  "prontera_gate": {
+    "x": 165,
+    "y": 191
+  },
+  "prontera_return": {
+    "x": null,
+    "y": null
+  },
+  "evidence_note": null
+}

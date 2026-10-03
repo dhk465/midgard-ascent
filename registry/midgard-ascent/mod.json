@@ -1,0 +1,17 @@
+{
+  "name": "midgard-ascent",
+  "author": "dhk465",
+  "description": "A configurable wave tower for Ragnarok Offline Renewal. Current authored content covers 20 floors and optional trials; an English JSON editor includes Korean monster names.",
+  "tags": [
+    "dungeon",
+    "tower",
+    "pve",
+    "progression",
+    "renewal"
+  ],
+  "homepage": "https://github.com/dhk465/midgard-ascent",
+  "source": {
+    "github": "dhk465/midgard-ascent",
+    "asset": "midgard-ascent-*.zip"
+  }
+}

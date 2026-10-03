@@ -1,0 +1,30 @@
+prontera,__GATE_X__,__GATE_Y__,4	script	도전의 탑::ohkc_gate	__GATE_SPRITE__,{
+	if (!$@ohkc_site_ok) { mes "현장 설정이 확인되지 않은 빌드입니다."; close; }
+	.@epoch=$@ohkc_epoch;
+	mes "[도전의 탑]";
+	mes "일반 1-"+callfunc("F_OHKC_MaxFloor")+"층과 두 가지 선택형 보스 시련입니다. 한 번에 한 캐릭터가 도전합니다.";
+	mes "최고 완료: "+ohkt_main_clear+"층. 보스 완료는 일반층 진행과 별개입니다.";
+	.@pick=select("일반층 선택:선택형 보스전:진행 설명:닫기");
+	if (.@pick==4) close;
+	if (.@pick==3) {
+		mes "일반층의 웨이브 수는 현재 설정을 따릅니다. 준비 안내에서 각 웨이브의 몬스터와 수를 확인하세요.";
+		mes "완료 뒤 전리품을 회수하고 기록관에서 다음 층이나 재도전을 선택하세요.";
+		mes "경험치와 드롭은 현재 서버 설정을 따릅니다. 별도 층 완료 보상은 없습니다.";
+		mes "보스는 원래 소환과 스킬을 유지하며, 일반층 진행에 필수가 아닙니다.";
+		close;
+	}
+	.@target=0;
+	if (.@pick==1) .@target=callfunc("F_OHKC_PickFloor");
+	if (.@pick==2) .@target=callfunc("F_OHKC_PickBoss");
+	if (.@target==0) close;
+	if (!$@ohkc_site_ok || .@epoch!=$@ohkc_epoch || $@ohkc_state!=0 || strcharinfo(3)!="prontera" || Hp<=0) { mes "진행 중인 도전이 있거나 상태가 바뀌었습니다."; close; }
+	close2;
+	$@ohkc_aid=getcharid(3);
+	$@ohkc_cid=getcharid(0);
+	$@ohkc_map$="prontera";
+	if (!callfunc("F_OHKC_Queue",.@target,.@epoch)) {
+		callfunc "F_OHKC_Cleanup","ENTRY_REJECTED";
+		dispbottom "경기장이 비어 있지 않거나 입장 조건이 바뀌었습니다.";
+	}
+	end;
+}

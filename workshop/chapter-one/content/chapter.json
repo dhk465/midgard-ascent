@@ -1,0 +1,1162 @@
+{
+  "schema_version": 1,
+  "version": "0.3.0",
+  "app_version": "1.2.2",
+  "app_requirement": ">=1.2.2",
+  "app_requirement_basis": "2026-09-17 audit: local app is 1.3.0; v1.3.0 stack/src/mods.rs app_requirement_met refuses '=1.2.2' (needs exact match) and its VENDOR_PINS rathena-upstream equals the reviewed commit e985006171d2eb320ee512a653f4c83aea3d81b6, so '>=1.2.2' keeps the reviewed 1.2.2 base loadable and admits 1.3.0.",
+  "era": "renewal",
+  "rathena_commit": "e985006171d2eb320ee512a653f4c83aea3d81b6",
+  "user_directive": "2026-09-15: 실제 게임 테스트는 나중에 일괄 수행하고 일반 10층과 보스전을 먼저 구현한다.",
+  "playtest_status": "DEFERRED_BY_USER_NOT_RUN",
+  "timing_ms": {
+    "first_wave": 5000,
+    "between_waves": 5000,
+    "clear_notice": 1000,
+    "floor_transition": 1000,
+    "boss_ready": 10000,
+    "native_settle_limit": 5000
+  },
+  "maps": [
+    {
+      "id": "ohkt01",
+      "theme_ko": "프론테라 풀밭",
+      "ground_cells": 40,
+      "pattern": "grass",
+      "base_rgb": [
+        69,
+        112,
+        54
+      ],
+      "accent_rgb": [
+        117,
+        137,
+        72
+      ],
+      "entry": [
+        40,
+        12
+      ],
+      "keeper": [
+        36,
+        12
+      ],
+      "exit": [
+        44,
+        12
+      ],
+      "spawn_points": [
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          36
+        ],
+        [
+          48,
+          32
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "theme_geometry": "TRAINING_GROUND_V1",
+      "art_status": "ORIGINAL_TRAINING_GROUND_CANDIDATE_GAME_NOT_RUN"
+    },
+    {
+      "id": "ohkt02",
+      "theme_ko": "소그라트 모래들판",
+      "ground_cells": 40,
+      "pattern": "moss",
+      "base_rgb": [
+        48,
+        77,
+        55
+      ],
+      "accent_rgb": [
+        89,
+        116,
+        70
+      ],
+      "entry": [
+        40,
+        12
+      ],
+      "keeper": [
+        36,
+        12
+      ],
+      "exit": [
+        44,
+        12
+      ],
+      "spawn_points": [
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          36
+        ],
+        [
+          48,
+          32
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    },
+    {
+      "id": "ohkt03",
+      "theme_ko": "프론테라 토끼 들판",
+      "ground_cells": 40,
+      "pattern": "sand",
+      "base_rgb": [
+        178,
+        142,
+        89
+      ],
+      "accent_rgb": [
+        219,
+        186,
+        124
+      ],
+      "entry": [
+        40,
+        12
+      ],
+      "keeper": [
+        36,
+        12
+      ],
+      "exit": [
+        44,
+        12
+      ],
+      "spawn_points": [
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          36
+        ],
+        [
+          48,
+          32
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    },
+    {
+      "id": "ohkt04",
+      "theme_ko": "게펜 벌레 들판",
+      "ground_cells": 40,
+      "pattern": "rock",
+      "base_rgb": [
+        85,
+        87,
+        100
+      ],
+      "accent_rgb": [
+        124,
+        131,
+        146
+      ],
+      "entry": [
+        40,
+        12
+      ],
+      "keeper": [
+        36,
+        12
+      ],
+      "exit": [
+        44,
+        12
+      ],
+      "spawn_points": [
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          36
+        ],
+        [
+          48,
+          32
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    },
+    {
+      "id": "ohkt05",
+      "theme_ko": "페이욘 버드나무 숲",
+      "ground_cells": 40,
+      "pattern": "ruins",
+      "base_rgb": [
+        104,
+        112,
+        83
+      ],
+      "accent_rgb": [
+        145,
+        151,
+        116
+      ],
+      "entry": [
+        40,
+        12
+      ],
+      "keeper": [
+        36,
+        12
+      ],
+      "exit": [
+        44,
+        12
+      ],
+      "spawn_points": [
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          36
+        ],
+        [
+          48,
+          32
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    },
+    {
+      "id": "ohkt06",
+      "theme_ko": "프론테라 벌 들판",
+      "ground_cells": 40,
+      "pattern": "crypt",
+      "base_rgb": [
+        67,
+        62,
+        72
+      ],
+      "accent_rgb": [
+        119,
+        110,
+        119
+      ],
+      "entry": [
+        40,
+        12
+      ],
+      "keeper": [
+        36,
+        12
+      ],
+      "exit": [
+        44,
+        12
+      ],
+      "spawn_points": [
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          36
+        ],
+        [
+          48,
+          32
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    },
+    {
+      "id": "ohkt07",
+      "theme_ko": "소그라트 독수리 들판",
+      "ground_cells": 40,
+      "pattern": "ice",
+      "base_rgb": [
+        135,
+        177,
+        193
+      ],
+      "accent_rgb": [
+        200,
+        222,
+        228
+      ],
+      "entry": [
+        40,
+        12
+      ],
+      "keeper": [
+        36,
+        12
+      ],
+      "exit": [
+        44,
+        12
+      ],
+      "spawn_points": [
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          36
+        ],
+        [
+          48,
+          32
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    },
+    {
+      "id": "ohkt08",
+      "theme_ko": "게펜 개구리 습지",
+      "ground_cells": 40,
+      "pattern": "lava",
+      "base_rgb": [
+        58,
+        49,
+        49
+      ],
+      "accent_rgb": [
+        173,
+        85,
+        46
+      ],
+      "entry": [
+        40,
+        12
+      ],
+      "keeper": [
+        36,
+        12
+      ],
+      "exit": [
+        44,
+        12
+      ],
+      "spawn_points": [
+        [
+          32,
+          32
+        ],
+        [
+          40,
+          36
+        ],
+        [
+          48,
+          32
+        ],
+        [
+          36,
+          44
+        ],
+        [
+          44,
+          44
+        ],
+        [
+          28,
+          40
+        ],
+        [
+          52,
+          40
+        ],
+        [
+          40,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    },
+    {
+      "id": "ohkt09",
+      "theme_ko": "프론테라 메뚜기 들판",
+      "ground_cells": 50,
+      "pattern": "fortress",
+      "base_rgb": [
+        122,
+        101,
+        87
+      ],
+      "accent_rgb": [
+        173,
+        151,
+        119
+      ],
+      "entry": [
+        50,
+        12
+      ],
+      "keeper": [
+        46,
+        12
+      ],
+      "exit": [
+        54,
+        12
+      ],
+      "spawn_points": [
+        [
+          42,
+          32
+        ],
+        [
+          50,
+          36
+        ],
+        [
+          58,
+          32
+        ],
+        [
+          46,
+          44
+        ],
+        [
+          54,
+          44
+        ],
+        [
+          38,
+          40
+        ],
+        [
+          62,
+          40
+        ],
+        [
+          50,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    },
+    {
+      "id": "ohkt10",
+      "theme_ko": "페이욘 버섯 숲",
+      "ground_cells": 50,
+      "pattern": "sanctum",
+      "base_rgb": [
+        167,
+        169,
+        167
+      ],
+      "accent_rgb": [
+        219,
+        205,
+        159
+      ],
+      "entry": [
+        50,
+        12
+      ],
+      "keeper": [
+        46,
+        12
+      ],
+      "exit": [
+        54,
+        12
+      ],
+      "spawn_points": [
+        [
+          42,
+          32
+        ],
+        [
+          50,
+          36
+        ],
+        [
+          58,
+          32
+        ],
+        [
+          46,
+          44
+        ],
+        [
+          54,
+          44
+        ],
+        [
+          38,
+          40
+        ],
+        [
+          62,
+          40
+        ],
+        [
+          50,
+          48
+        ]
+      ],
+      "art_status": "PROCEDURAL_FLOOR_BLOCKOUT_NO_3D_PROPS"
+    }
+  ],
+  "monsters": [
+    {
+      "id": 1002,
+      "aegis": "PORING",
+      "label_ko": "포링",
+      "native_level_reference": 1,
+      "native_hp_reference": 55,
+      "direct_skills_reviewed": [
+        "NPC_EMOTION",
+        "NPC_WATERATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L134",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1113,
+      "aegis": "DROPS",
+      "label_ko": "드롭프스",
+      "native_level_reference": 2,
+      "native_hp_reference": 46,
+      "direct_skills_reviewed": [
+        "NPC_EMOTION",
+        "NPC_FIREATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L5546",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1063,
+      "aegis": "LUNATIC",
+      "label_ko": "루나틱",
+      "native_level_reference": 3,
+      "native_hp_reference": 48,
+      "direct_skills_reviewed": [],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L3051",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1011,
+      "aegis": "CHONCHON",
+      "label_ko": "촌촌",
+      "native_level_reference": 5,
+      "native_hp_reference": 48,
+      "direct_skills_reviewed": [
+        "NPC_WINDATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L517",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1010,
+      "aegis": "WILOW",
+      "label_ko": "윌로우",
+      "native_level_reference": 8,
+      "native_hp_reference": 78,
+      "direct_skills_reviewed": [
+        "NPC_GROUNDATTACK",
+        "NPC_TELEKINESISATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L469",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1004,
+      "aegis": "HORNET",
+      "label_ko": "호넷",
+      "native_level_reference": 11,
+      "native_hp_reference": 85,
+      "direct_skills_reviewed": [
+        "NPC_PIERCINGATT",
+        "NPC_WINDATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L208",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1009,
+      "aegis": "CONDOR",
+      "label_ko": "콘도르",
+      "native_level_reference": 12,
+      "native_hp_reference": 105,
+      "direct_skills_reviewed": [
+        "BS_ADRENALINE",
+        "NPC_EMOTION",
+        "NPC_WINDATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L421",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1012,
+      "aegis": "RODA_FROG",
+      "label_ko": "로다 프로그",
+      "native_level_reference": 13,
+      "native_hp_reference": 140,
+      "direct_skills_reviewed": [
+        "NPC_WATERATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L567",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1052,
+      "aegis": "ROCKER",
+      "label_ko": "로커",
+      "native_level_reference": 15,
+      "native_hp_reference": 155,
+      "direct_skills_reviewed": [
+        "NPC_EMOTION",
+        "NPC_GROUNDATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L2501",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1014,
+      "aegis": "SPORE",
+      "label_ko": "스포아",
+      "native_level_reference": 18,
+      "native_hp_reference": 223,
+      "direct_skills_reviewed": [
+        "NPC_EMOTION",
+        "NPC_PROVOCATION",
+        "NPC_SLEEPATTACK",
+        "NPC_WATERATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L659",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1090,
+      "aegis": "MASTERING",
+      "label_ko": "마스터링",
+      "native_level_reference": 42,
+      "native_hp_reference": 1260,
+      "direct_skills_reviewed": [
+        "AL_TELEPORT",
+        "NPC_SUMMONSLAVE",
+        "NPC_WATERATTACK"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L4407",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    },
+    {
+      "id": 1088,
+      "aegis": "VOCAL",
+      "label_ko": "보컬",
+      "native_level_reference": 18,
+      "native_hp_reference": 3317,
+      "direct_skills_reviewed": [
+        "AL_TELEPORT",
+        "NPC_COMBOATTACK",
+        "NPC_GROUNDATTACK",
+        "NPC_SILENCEATTACK",
+        "NPC_SUMMONSLAVE"
+      ],
+      "db_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_db.yml#L4309",
+      "skill_source": "https://github.com/rathena/rathena/blob/e985006171d2eb320ee512a653f4c83aea3d81b6/db/re/mob_skill_db.txt",
+      "effective_runtime_verified": false
+    }
+  ],
+  "floors": [
+    {
+      "id": 1,
+      "name_ko": "1층 - 프론테라 풀밭",
+      "map_id": "ohkt01",
+      "waves": [
+        [
+          {
+            "mob_id": 1002,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1002,
+            "count": 2
+          },
+          {
+            "mob_id": 1063,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1002,
+            "count": 1
+          },
+          {
+            "mob_id": 1063,
+            "count": 4
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 2,
+      "name_ko": "2층 - 소그라트 모래들판",
+      "map_id": "ohkt02",
+      "waves": [
+        [
+          {
+            "mob_id": 1113,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1113,
+            "count": 4
+          }
+        ],
+        [
+          {
+            "mob_id": 1113,
+            "count": 5
+          },
+          {
+            "mob_id": 1002,
+            "count": 1
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 3,
+      "name_ko": "3층 - 프론테라 토끼 들판",
+      "map_id": "ohkt03",
+      "waves": [
+        [
+          {
+            "mob_id": 1063,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1063,
+            "count": 4
+          }
+        ],
+        [
+          {
+            "mob_id": 1063,
+            "count": 5
+          },
+          {
+            "mob_id": 1002,
+            "count": 1
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 4,
+      "name_ko": "4층 - 게펜 벌레 들판",
+      "map_id": "ohkt04",
+      "waves": [
+        [
+          {
+            "mob_id": 1011,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1011,
+            "count": 4
+          }
+        ],
+        [
+          {
+            "mob_id": 1011,
+            "count": 5
+          },
+          {
+            "mob_id": 1063,
+            "count": 1
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 5,
+      "name_ko": "5층 - 페이욘 버드나무 숲",
+      "map_id": "ohkt05",
+      "waves": [
+        [
+          {
+            "mob_id": 1010,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1010,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1010,
+            "count": 4
+          },
+          {
+            "mob_id": 1002,
+            "count": 2
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 6,
+      "name_ko": "6층 - 프론테라 벌 들판",
+      "map_id": "ohkt06",
+      "waves": [
+        [
+          {
+            "mob_id": 1004,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1004,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1004,
+            "count": 6
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 7,
+      "name_ko": "7층 - 소그라트 독수리 들판",
+      "map_id": "ohkt07",
+      "waves": [
+        [
+          {
+            "mob_id": 1009,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1009,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1009,
+            "count": 4
+          },
+          {
+            "mob_id": 1113,
+            "count": 2
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 8,
+      "name_ko": "8층 - 게펜 개구리 습지",
+      "map_id": "ohkt08",
+      "waves": [
+        [
+          {
+            "mob_id": 1012,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1012,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1012,
+            "count": 6
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 9,
+      "name_ko": "9층 - 프론테라 메뚜기 들판",
+      "map_id": "ohkt09",
+      "waves": [
+        [
+          {
+            "mob_id": 1052,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1052,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1052,
+            "count": 6
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    },
+    {
+      "id": 10,
+      "name_ko": "10층 - 페이욘 버섯 숲",
+      "map_id": "ohkt10",
+      "waves": [
+        [
+          {
+            "mob_id": 1014,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1014,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1014,
+            "count": 6
+          }
+        ]
+      ],
+      "balance_status": "SOURCE_REFERENCED_NOT_PLAYTESTED"
+    }
+  ],
+  "trials": [
+    {
+      "id": 101,
+      "name_ko": "시련 1 - 마스터링",
+      "map_id": "ohkt09",
+      "unlock_floor": 10,
+      "mvp": false,
+      "waves": [
+        [
+          {
+            "mob_id": 1090,
+            "count": 1
+          }
+        ]
+      ],
+      "native_child_ids": [
+        1002,
+        1113
+      ],
+      "warning_ko": "일반 10층보다 강한 선택형 보스입니다. 소환과 순간이동을 포함한 원래 스킬을 유지합니다."
+    },
+    {
+      "id": 102,
+      "name_ko": "시련 2 - 보컬",
+      "map_id": "ohkt10",
+      "unlock_floor": 10,
+      "mvp": false,
+      "waves": [
+        [
+          {
+            "mob_id": 1088,
+            "count": 1
+          }
+        ]
+      ],
+      "native_child_ids": [
+        1052
+      ],
+      "warning_ko": "풀밭의 우두머리 보컬입니다. 로커 소환, 침묵, 연속 공격과 순간이동을 포함한 원래 스킬을 유지합니다."
+    }
+  ],
+  "excluded_candidates": [
+    {
+      "id": 1007,
+      "reason": "Native metamorphosis into Pupa/Creamy is not supported by this chapter; do not disable its skill."
+    }
+  ],
+  "global_skill_rules_audited": false
+}

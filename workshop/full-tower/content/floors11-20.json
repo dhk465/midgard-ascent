@@ -1,0 +1,1143 @@
+{
+  "schema_version": 1,
+  "target_floor_capacity": 200,
+  "playtest_status": "DEFERRED_BY_USER_NOT_RUN",
+  "monsters": [
+    {
+      "id": 1019,
+      "aegis": "PECOPECO",
+      "label_ko": "Peco Peco",
+      "native_level_reference": 25,
+      "native_hp_reference": 354,
+      "direct_skills_reviewed": [
+        "AS_SONICBLOW",
+        "NPC_EMOTION",
+        "NPC_FIREATTACK",
+        "NPC_PROVOCATION"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 904,
+        "base_spawn": {
+          "line": 25,
+          "sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c",
+          "path": "local-source/morocc.txt",
+          "record": "moc_fild01,0,0\tmonster\tPeco Peco\t1019,93,5000"
+        },
+        "skills": [
+          {
+            "line": 103,
+            "record": "1019,Peco Peco@AS_SONICBLOW,attack,136,5,500,800,5000,no,target,always,0,,,,,,6,"
+          },
+          {
+            "line": 104,
+            "record": "1019,Peco Peco@NPC_EMOTION,chase,197,1,2000,0,5000,yes,self,always,0,6,,,,,,"
+          },
+          {
+            "line": 105,
+            "record": "1019,Peco Peco@NPC_FIREATTACK,attack,186,1,2000,0,5000,yes,target,always,0,,,,,,,"
+          },
+          {
+            "line": 106,
+            "record": "1019,Peco Peco@NPC_PROVOCATION,chase,194,1,200,0,5000,yes,target,always,0,,,,,,19,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f5065636f7065636f2e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 187911,
+            "sha256": "6f528ee0b87d34816b1f82119741d0df2eb0e4df0f7e6fb505c0c84e717ca130",
+            "header_hex": "5350010247000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f5065636f7065636f2e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 123060,
+            "sha256": "a48ff1d64851442d5004d8bf9cad3f2b8c42d73d05ada3401de1608467535ec3",
+            "header_hex": "4143050248003400",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1031,
+      "aegis": "POPORING",
+      "label_ko": "Poporing",
+      "native_level_reference": 30,
+      "native_hp_reference": 489,
+      "direct_skills_reviewed": [
+        "NPC_EMOTION",
+        "NPC_POISON",
+        "NPC_POISONATTACK"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 1470,
+        "base_spawn": {
+          "line": 41,
+          "sha256": "3a953deb5804e1e3cd7ab79df48a5a2c09dc1227b6851ffb1ef3973c1bb64370",
+          "path": "local-source/geffen.txt",
+          "record": "gef_fild02,0,0\tmonster\tPoporing\t1031,24,5000"
+        },
+        "skills": [
+          {
+            "line": 136,
+            "record": "1031,Poporing@NPC_EMOTION,loot,197,1,2000,0,5000,yes,self,always,0,2,,,,,,"
+          },
+          {
+            "line": 137,
+            "record": "1031,Poporing@NPC_POISON,attack,176,2,500,800,5000,no,target,always,0,,,,,,,"
+          },
+          {
+            "line": 138,
+            "record": "1031,Poporing@NPC_POISONATTACK,attack,188,1,2000,0,5000,yes,target,always,0,,,,,,,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f506f706f72696e672e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 42859,
+            "sha256": "52c027e1a7d72c1f41ca5c516f60a17b672ea4d111405d1c30a1749bb259ffe8",
+            "header_hex": "5350010231000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f506f706f72696e672e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 146172,
+            "sha256": "412578f4cf49b33bf93ca9c8607df695493e457910e6ca53e22ba9437aa16e4b",
+            "header_hex": "414305024800a700",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1055,
+      "aegis": "MUKA",
+      "label_ko": "Muka",
+      "native_level_reference": 23,
+      "native_hp_reference": 337,
+      "direct_skills_reviewed": [
+        "NPC_GROUNDATTACK",
+        "NPC_PIERCINGATT",
+        "NPC_SPLASHATTACK"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 2658,
+        "base_spawn": {
+          "line": 26,
+          "sha256": "5390ada6c419332cc0981d7804ec76fc5ee5c14e0f32a91c0a8120bbe1c2fc3c",
+          "path": "local-source/morocc.txt",
+          "record": "moc_fild01,0,0\tmonster\tMuka\t1055,202,5000"
+        },
+        "skills": [
+          {
+            "line": 273,
+            "record": "1055,Muka@NPC_GROUNDATTACK,attack,185,3,500,500,5000,no,target,always,0,,,,,,6,"
+          },
+          {
+            "line": 274,
+            "record": "1055,Muka@NPC_PIERCINGATT,attack,158,3,500,0,5000,yes,target,always,0,,,,,,6,"
+          },
+          {
+            "line": 275,
+            "record": "1055,Muka@NPC_SPLASHATTACK,attack,174,1,2000,0,5000,yes,target,attackpcge,2,,,,,,,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f4d756b612e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 54611,
+            "sha256": "2598e7f25cea46c646496512dbc7495df9c322df89b48f6798d4bf9d8e43f5c7",
+            "header_hex": "535001021f000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f4d756b612e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 125396,
+            "sha256": "f426201f5fe9f96625ae6ad5b0f1d27b2e6e082975a7c5a104ad5826cc49f37f",
+            "header_hex": "4143040228004700",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1056,
+      "aegis": "SMOKIE",
+      "label_ko": "Smokie",
+      "native_level_reference": 29,
+      "native_hp_reference": 414,
+      "direct_skills_reviewed": [
+        "AL_HEAL",
+        "NPC_EMOTION",
+        "NPC_GROUNDATTACK",
+        "NPC_PROVOCATION",
+        "TF_HIDING"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 2706,
+        "base_spawn": {
+          "line": 95,
+          "sha256": "3a953deb5804e1e3cd7ab79df48a5a2c09dc1227b6851ffb1ef3973c1bb64370",
+          "path": "local-source/geffen.txt",
+          "record": "gef_fild05,0,0\tmonster\tSmokie\t1056,20,5000"
+        },
+        "skills": [
+          {
+            "line": 276,
+            "record": "1056,Smokie@AL_HEAL,idle,28,5,10000,0,5000,yes,self,mystatuson,hiding,,,,,,2,"
+          },
+          {
+            "line": 277,
+            "record": "1056,Smokie@NPC_EMOTION,loot,197,1,2000,0,5000,yes,self,always,0,2,,,,,,"
+          },
+          {
+            "line": 278,
+            "record": "1056,Smokie@NPC_GROUNDATTACK,attack,185,2,500,500,5000,no,target,always,0,,,,,,6,"
+          },
+          {
+            "line": 279,
+            "record": "1056,Smokie@NPC_PROVOCATION,chase,194,1,200,0,5000,yes,target,always,0,,,,,,19,"
+          },
+          {
+            "line": 280,
+            "record": "1056,Smokie@TF_HIDING,attack,51,1,500,500,5000,no,self,myhpltmaxrate,50,,,,,,19,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f536d6f6b69652e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 71200,
+            "sha256": "1ccb3272d92f1dd57a1f53ac92cb85cd59b406ad0fb46bf92b5c5bf869cbf1bc",
+            "header_hex": "535001023d000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f536d6f6b69652e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 208956,
+            "sha256": "838b0684e6589aba0cbc4d66b1a1a55c186055aa1c6a57725ff7e44c2e586784",
+            "header_hex": "4143050240001400",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1057,
+      "aegis": "YOYO",
+      "label_ko": "Yoyo",
+      "native_level_reference": 38,
+      "native_hp_reference": 694,
+      "direct_skills_reviewed": [
+        "AM_POTIONPITCHER",
+        "NPC_EMOTION",
+        "NPC_GROUNDATTACK",
+        "NPC_PROVOCATION",
+        "SM_PROVOKE",
+        "TF_THROWSTONE"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 2753,
+        "base_spawn": {
+          "line": 48,
+          "sha256": "607211e984c3aaa9c8e5b51b304d5c2cd61b300464de7eb81aeb901195f47922",
+          "path": "local-source/prontera.txt",
+          "record": "prt_fild03,0,0\tmonster\tYoyo\t1057,127,5000"
+        },
+        "skills": [
+          {
+            "line": 281,
+            "record": "1057,Yoyo@AM_POTIONPITCHER,idle,231,1,500,1500,5000,yes,self,always,0,,,,,,,"
+          },
+          {
+            "line": 282,
+            "record": "1057,Yoyo@NPC_EMOTION,loot,197,1,2000,0,5000,yes,self,always,0,2,,,,,,"
+          },
+          {
+            "line": 283,
+            "record": "1057,Yoyo@NPC_GROUNDATTACK,attack,185,1,2000,0,5000,yes,target,always,0,,,,,,,"
+          },
+          {
+            "line": 284,
+            "record": "1057,Yoyo@NPC_PROVOCATION,chase,194,1,200,0,5000,yes,target,always,0,,,,,,19,"
+          },
+          {
+            "line": 285,
+            "record": "1057,Yoyo@SM_PROVOKE,chase,6,10,500,600,5000,yes,target,always,0,,,,,,,"
+          },
+          {
+            "line": 286,
+            "record": "1057,Yoyo@TF_THROWSTONE,chase,152,1,2000,0,5000,yes,target,always,0,,,,,,6,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f596f796f2e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 47820,
+            "sha256": "9d9b94762e5526677ec95bd813cda1e798f1bbca32e362e034c29eee41dcaea6",
+            "header_hex": "5350010239000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f596f796f2e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 111052,
+            "sha256": "61b168d8d8adabe09097a6bb709a748b04a762cae70afce9907bb7839679d4ff",
+            "header_hex": "414305024800a400",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1060,
+      "aegis": "BIGFOOT",
+      "label_ko": "Bigfoot",
+      "native_level_reference": 29,
+      "native_hp_reference": 506,
+      "direct_skills_reviewed": [
+        "NPC_EMOTION",
+        "NPC_GROUNDATTACK",
+        "NPC_STUNATTACK",
+        "SM_ENDURE"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 2910,
+        "base_spawn": {
+          "line": 76,
+          "sha256": "88f1d0a2c76de75c98790a34d01cde14d5e3a044d4b5338cc3865240d33677fc",
+          "path": "local-source/payon.txt",
+          "record": "pay_fild07,0,0\tmonster\tBigfoot\t1060,174,5000"
+        },
+        "skills": [
+          {
+            "line": 316,
+            "record": "1060,Bigfoot@NPC_EMOTION,chase,197,1,2000,0,5000,yes,self,always,0,6,,,,,,"
+          },
+          {
+            "line": 317,
+            "record": "1060,Bigfoot@NPC_GROUNDATTACK,attack,185,1,2000,0,5000,yes,target,always,0,,,,,,,"
+          },
+          {
+            "line": 318,
+            "record": "1060,Bigfoot@NPC_EMOTION,chase,197,1,200,0,5000,yes,self,always,0,19,0x81,,,,,"
+          },
+          {
+            "line": 319,
+            "record": "1060,Bigfoot@NPC_STUNATTACK,attack,179,2,500,1500,5000,no,target,always,0,,,,,,,"
+          },
+          {
+            "line": 320,
+            "record": "1060,Bigfoot@SM_ENDURE,chase,8,1,5000,0,10000,yes,self,longrangeattacked,,,,,,,6,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f426967666f6f742e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 335537,
+            "sha256": "2eb950fdda5978d28d0f73cba4bfd0bcd3250ffbf202567325ff988698a3f979",
+            "header_hex": "5350010247000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f426967666f6f742e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 62548,
+            "sha256": "cfd918dd641ae3f92e268df7b865062c90fd3549f0ea171c2b5fda59fc0cea65",
+            "header_hex": "4143040238000b00",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1094,
+      "aegis": "AMBERNITE",
+      "label_ko": "Ambernite",
+      "native_level_reference": 19,
+      "native_hp_reference": 265,
+      "direct_skills_reviewed": [
+        "NPC_EMOTION",
+        "NPC_KEEPING",
+        "NPC_WATERATTACK"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 4605,
+        "base_spawn": {
+          "line": 33,
+          "sha256": "3a953deb5804e1e3cd7ab79df48a5a2c09dc1227b6851ffb1ef3973c1bb64370",
+          "path": "local-source/geffen.txt",
+          "record": "gef_fild01,0,0\tmonster\tAmbernite\t1094,28,5000"
+        },
+        "skills": [
+          {
+            "line": 455,
+            "record": "1094,Ambernite@NPC_EMOTION,walk,197,1,2000,0,5000,yes,self,always,0,19,,,,,,"
+          },
+          {
+            "line": 456,
+            "record": "1094,Ambernite@NPC_KEEPING,attack,201,1,2000,0,5000,yes,self,attackpcge,2,,,,,,9,"
+          },
+          {
+            "line": 457,
+            "record": "1094,Ambernite@NPC_WATERATTACK,attack,184,1,2000,0,5000,yes,target,always,0,,,,,,,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f414d4245524e4954452e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 51973,
+            "sha256": "c8c7054cef4ec0b934c61ce1c08792be817ce67344b0e777e008b46f9d44fa4c",
+            "header_hex": "5350010228000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f414d4245524e4954452e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 77772,
+            "sha256": "2562959280637c995f72d8b9872edb5ea6616255f54d855f021ac1ce41762474",
+            "header_hex": "4143040228001c00",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1103,
+      "aegis": "CARAMEL",
+      "label_ko": "Caramel",
+      "native_level_reference": 25,
+      "native_hp_reference": 319,
+      "direct_skills_reviewed": [
+        "NPC_GROUNDATTACK",
+        "NPC_PIERCINGATT"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 5040,
+        "base_spawn": {
+          "line": 77,
+          "sha256": "88f1d0a2c76de75c98790a34d01cde14d5e3a044d4b5338cc3865240d33677fc",
+          "path": "local-source/payon.txt",
+          "record": "pay_fild07,0,0\tmonster\tCaramel\t1103,40,5000"
+        },
+        "skills": [
+          {
+            "line": 520,
+            "record": "1103,Caramel@NPC_GROUNDATTACK,attack,185,1,2000,0,5000,yes,target,always,0,,,,,,,"
+          },
+          {
+            "line": 521,
+            "record": "1103,Caramel@NPC_PIERCINGATT,attack,158,5,500,0,5000,yes,target,always,0,,,,,,6,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f434152414d454c2e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 17678,
+            "sha256": "70095cbb2347db84fba5cfdee4534c6348a1f943abd8e436050982f11987018c",
+            "header_hex": "535001021c000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f434152414d454c2e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 51196,
+            "sha256": "cd123845a16c5fabe13cee574221e073133578e58601c120f44cf0715dac66f5",
+            "header_hex": "4143040228005500",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1104,
+      "aegis": "COCO",
+      "label_ko": "Coco",
+      "native_level_reference": 38,
+      "native_hp_reference": 694,
+      "direct_skills_reviewed": [
+        "NPC_EMOTION",
+        "NPC_GROUNDATTACK",
+        "TF_THROWSTONE"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 5091,
+        "base_spawn": {
+          "line": 40,
+          "sha256": "3a953deb5804e1e3cd7ab79df48a5a2c09dc1227b6851ffb1ef3973c1bb64370",
+          "path": "local-source/geffen.txt",
+          "record": "gef_fild02,0,0\tmonster\tCoco\t1104,172,5000"
+        },
+        "skills": [
+          {
+            "line": 522,
+            "record": "1104,Coco@NPC_GROUNDATTACK,attack,185,1,2000,0,5000,yes,target,always,0,,,,,,,"
+          },
+          {
+            "line": 523,
+            "record": "1104,Coco@NPC_EMOTION,chase,197,1,200,0,5000,yes,self,always,0,19,0x81,,,,,"
+          },
+          {
+            "line": 524,
+            "record": "1104,Coco@TF_THROWSTONE,chase,152,1,2000,0,5000,yes,target,always,0,,,,,,6,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f434f434f2e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 24071,
+            "sha256": "6ecf68a95ac6e8f6e65a175aa6b8d3df13bd4ba98199e1e733698432d6d31a7a",
+            "header_hex": "535001021b000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f434f434f2e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 65580,
+            "sha256": "4b9692762faa6e512855047021ce3b264b8544fa0060a0705e015c60bda58596",
+            "header_hex": "4143040228000600",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    },
+    {
+      "id": 1128,
+      "aegis": "HORN",
+      "label_ko": "Horn",
+      "native_level_reference": 32,
+      "native_hp_reference": 564,
+      "direct_skills_reviewed": [
+        "NPC_GROUNDATTACK",
+        "NPC_PIERCINGATT"
+      ],
+      "effective_runtime_verified": false,
+      "source_evidence": {
+        "db_path": "rathena/db/re/mob_db.yml",
+        "db_sha256": "fe79480381a98953a0281edafd775486926b5e186feec0a99816a95433907136",
+        "db_line": 6300,
+        "base_spawn": {
+          "line": 42,
+          "sha256": "3a953deb5804e1e3cd7ab79df48a5a2c09dc1227b6851ffb1ef3973c1bb64370",
+          "path": "local-source/geffen.txt",
+          "record": "gef_fild02,0,0\tmonster\tHorn\t1128,24,5000"
+        },
+        "skills": [
+          {
+            "line": 662,
+            "record": "1128,Horn@NPC_GROUNDATTACK,attack,185,1,2000,0,5000,yes,target,always,0,,,,,,,"
+          },
+          {
+            "line": 663,
+            "record": "1128,Horn@NPC_PIERCINGATT,attack,158,2,500,0,5000,yes,target,always,0,,,,,,6,"
+          }
+        ],
+        "children": [],
+        "transforms": [],
+        "assets": [
+          {
+            "extension": "spr",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f484f524e2e737072",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 40838,
+            "sha256": "08fa381aea73ce5040b5472658d43724d0dafbf2edf94097cf63a4bf15b3a5cc",
+            "header_hex": "535001021f000000",
+            "signature_matches": true
+          },
+          {
+            "extension": "act",
+            "path_hex": "646174612f7370726974652fb8f3bdbac5cd2f484f524e2e616374",
+            "exists": true,
+            "archive": "local-source/data.grf",
+            "entry_flags": 1,
+            "readable": true,
+            "size": 48644,
+            "sha256": "390f8f17f996cd562db11bbc56cd213666e2b38a197f1e70a74b84b70c41c745",
+            "header_hex": "4143040228001700",
+            "signature_matches": true
+          }
+        ]
+      },
+      "asset_status": "LOCAL_GRF_READ_NOT_GAME_RENDER",
+      "playtest_status": "NOT_RUN"
+    }
+  ],
+  "floors": [
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1014,
+            "count": 3
+          },
+          {
+            "mob_id": 1025,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1077,
+            "count": 2
+          },
+          {
+            "mob_id": 1014,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1077,
+            "count": 3
+          },
+          {
+            "mob_id": 1025,
+            "count": 3
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt01",
+      "warning": null,
+      "name_ko": "11층 - 페이욘 숲 가장자리",
+      "id": 11,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "페이욘 숲 가장자리"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1103,
+            "count": 2
+          },
+          {
+            "mob_id": 1014,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1103,
+            "count": 3
+          },
+          {
+            "mob_id": 1025,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1103,
+            "count": 4
+          },
+          {
+            "mob_id": 1077,
+            "count": 2
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt02",
+      "warning": null,
+      "name_ko": "12층 - 숲의 카라멜",
+      "id": 12,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "숲의 카라멜"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1056,
+            "count": 2
+          },
+          {
+            "mob_id": 1103,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1056,
+            "count": 3
+          },
+          {
+            "mob_id": 1014,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1056,
+            "count": 3
+          },
+          {
+            "mob_id": 1103,
+            "count": 3
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt03",
+      "warning": "Original hiding and heal retained",
+      "name_ko": "13층 - 스모키 숲",
+      "id": 13,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "스모키 숲"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1019,
+            "count": 3
+          },
+          {
+            "mob_id": 1001,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1019,
+            "count": 4
+          },
+          {
+            "mob_id": 1055,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1019,
+            "count": 4
+          },
+          {
+            "mob_id": 1055,
+            "count": 4
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt04",
+      "warning": null,
+      "name_ko": "14층 - 사막의 새 발자국",
+      "id": 14,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "사막의 새 발자국"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1055,
+            "count": 4
+          },
+          {
+            "mob_id": 1001,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1055,
+            "count": 4
+          },
+          {
+            "mob_id": 1019,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1055,
+            "count": 4
+          },
+          {
+            "mob_id": 1019,
+            "count": 4
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt05",
+      "warning": null,
+      "name_ko": "15층 - 무카 모래정원",
+      "id": 15,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "무카 모래정원"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1094,
+            "count": 4
+          },
+          {
+            "mob_id": 1012,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1031,
+            "count": 3
+          },
+          {
+            "mob_id": 1094,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1031,
+            "count": 4
+          },
+          {
+            "mob_id": 1094,
+            "count": 3
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt06",
+      "warning": null,
+      "name_ko": "16층 - 습지로 흐르는 길",
+      "id": 16,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "습지로 흐르는 길"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1031,
+            "count": 3
+          },
+          {
+            "mob_id": 1094,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1031,
+            "count": 4
+          },
+          {
+            "mob_id": 1056,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1031,
+            "count": 4
+          },
+          {
+            "mob_id": 1056,
+            "count": 3
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt07",
+      "warning": null,
+      "name_ko": "17층 - 포포링 습지",
+      "id": 17,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "포포링 습지"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1060,
+            "count": 2
+          },
+          {
+            "mob_id": 1031,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1060,
+            "count": 3
+          },
+          {
+            "mob_id": 1103,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1060,
+            "count": 4
+          },
+          {
+            "mob_id": 1031,
+            "count": 3
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt08",
+      "warning": null,
+      "name_ko": "18층 - 빅풋 숲",
+      "id": 18,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "빅풋 숲"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1128,
+            "count": 3
+          },
+          {
+            "mob_id": 1031,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1128,
+            "count": 4
+          },
+          {
+            "mob_id": 1060,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1128,
+            "count": 4
+          },
+          {
+            "mob_id": 1060,
+            "count": 3
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt09",
+      "warning": null,
+      "name_ko": "19층 - 호른 숲길",
+      "id": 19,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "호른 숲길"
+    },
+    {
+      "waves": [
+        [
+          {
+            "mob_id": 1104,
+            "count": 2
+          },
+          {
+            "mob_id": 1128,
+            "count": 3
+          }
+        ],
+        [
+          {
+            "mob_id": 1057,
+            "count": 2
+          },
+          {
+            "mob_id": 1104,
+            "count": 2
+          },
+          {
+            "mob_id": 1128,
+            "count": 2
+          }
+        ],
+        [
+          {
+            "mob_id": 1057,
+            "count": 3
+          },
+          {
+            "mob_id": 1104,
+            "count": 3
+          },
+          {
+            "mob_id": 1128,
+            "count": 2
+          }
+        ]
+      ],
+      "balance_status": "NOT_PLAYTESTED",
+      "map_id": "ohkt10",
+      "warning": "Original self potion/provoke retained; level38 jump untested",
+      "name_ko": "20층 - 코코와 요요의 깊은 숲",
+      "id": 20,
+      "status": "SOURCE_AND_ASSET_READ_REVIEWED_GAME_NOT_RUN",
+      "theme_ko": "코코와 요요의 깊은 숲"
+    }
+  ],
+  "notes": [
+    "Poison Spore retained from approved opening although native evidence supplied is dungeon, not field",
+    "Natural-field qualification for added candidates via selected-monsters field_spawns",
+    "Three waves proposed for new floors; opening five-wave preset unchanged",
+    "Species/count compositions do not establish monotonic challenge or balance; source level/HP remain originals",
+    "No official latest kRO balance parity claimed"
+  ]
+}

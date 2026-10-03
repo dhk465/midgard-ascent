@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "gateway": {
+    "sprite": "4_M_SAGE_C",
+    "id": 755,
+    "role": "Tower custodian",
+    "spr_sha256": "e78552c33ab9a1f134da1b235beaf71b7c29db975cbcaaee079f1ad75e584153",
+    "act_sha256": "ed2fa530b597aadf76c8435d79311be844e7f36b10a8f6bb4569a4e9ec70babb"
+  },
+  "ready": [
+    {
+      "sprite": "4_F_SURA",
+      "id": 484,
+      "role": "Martial mentor",
+      "spr_sha256": "697ab6b702f25a4fa1f60be45346f72b09d13695a85b452829fe34c2bf334428",
+      "act_sha256": "09f7aba00a3e76fcdf7f2ae6c5111f450e07b9086ecf83c4c687b061940ec650"
+    },
+    {
+      "sprite": "4_M_RUSKNIGHT",
+      "id": 966,
+      "role": "Trial knight",
+      "spr_sha256": "fb4d4e973473df6d9fd4de05a21949f4f8e7d0acf3e4a84a5cfb4ab0706742bf",
+      "act_sha256": "a86d2b51ed152dc63bd2470b8af5a5469e500852de7a8cd7e4865d72453ddb3e"
+    },
+    {
+      "sprite": "4_M_KNIGHT_BLACK",
+      "id": 468,
+      "role": "Veteran challenger",
+      "spr_sha256": "a7f8b8b2e67dbab4db3ee2e33893be68723a988f2cae26be691c406e185e5b8e",
+      "act_sha256": "e5092ed4a2d22eac3c34de935a4101ec19c87e19e1f232366e22aadad1349db2"
+    }
+  ],
+  "keeper": [
+    {
+      "sprite": "4_M_FAIRYSCHOLAR",
+      "id": 621,
+      "role": "Archive scholar",
+      "spr_sha256": "38c3b6287b599d91a59a01fb32986cb80b34cf517e328d75a4b4c0a7878af443",
+      "act_sha256": "e9aea50218efd583440b3281c126aac410017daa42f3039a341fe405b52d62f8"
+    },
+    {
+      "sprite": "4_M_SAGE_A",
+      "id": 754,
+      "role": "Tower chronicler",
+      "spr_sha256": "ac4310a7b64b866f504f14efe1b883a2a0cdd22f5e5ed1b6fcf30164f55180e0",
+      "act_sha256": "ba68f47ff12683096cb6205f9956e3b0000d92383723f8f0fcb5f29615152b82"
+    }
+  ],
+  "exit": [
+    {
+      "sprite": "4_F_TELEPORTER",
+      "id": 124,
+      "role": "Portal guide",
+      "spr_sha256": "d6d32aa583e185c9bccf217aa9038cd9645c319cf92f4fb613b7d6319cf78269",
+      "act_sha256": "6fa81c827dbe4a2c8236116b0d4bfc762892f00cc2407cd0b5f9db643aad0cdf"
+    },
+    {
+      "sprite": "4_F_FAIRY",
+      "id": 435,
+      "role": "Spirit wayfinder",
+      "spr_sha256": "4ebab588d38ad85efd02ea3c0f415a6fdafc3d1280ddeb3710c81683ecf754e2",
+      "act_sha256": "d2dc242d0b13ebb2e53dee5bec5083e6108bbef7bdcc0d323461d5a86510d70e"
+    }
+  ],
+  "floor_variants": {
+    "ready": [
+      0,
+      1,
+      0,
+      2,
+      0,
+      1,
+      1,
+      2,
+      2,
+      2
+    ],
+    "keeper": [
+      0,
+      0,
+      1,
+      0,
+      1,
+      1,
+      1,
+      0,
+      1,
+      0
+    ],
+    "exit": [
+      1,
+      1,
+      0,
+      1,
+      0,
+      0,
+      0,
+      1,
+      0,
+      1
+    ]
+  },
+  "status": "LOCAL_ASSET_VERIFIED_GAME_NOT_RUN",
+  "evidence": "Current local client JT table and hashed SPR/ACT; pinned rAthena constants match; live animation and installed binary source NOT_VERIFIED."
+}
